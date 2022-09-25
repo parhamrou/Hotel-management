@@ -1,5 +1,11 @@
 # At first you have to create database Restaurant with this command: CREATE DATABASE Hotel-management
-# Then you can run this script to create tables.
+# Then you can run this script to create tables
+
+CREATE TABLE admin (
+    username VARCHAR(20) PRIMARY KEY,
+    password VARCHAR(20)
+);
+
 
 CREATE TABLE costumer (
     id INT PRIMARY KEY,
@@ -34,12 +40,12 @@ CREATE TABLE food (
 );
 
 
-CREATE TABLE room_factor (
-    factor_id INT AUTO_INCREMENT,
+CREATE TABLE order_factor (
+    order_id INT AUTO_INCREMENT,
     room_number INT,
     total_price INT,
-    PRIMARY KEY(factor_id),
-    FOREIGN KEY(room_number) REFERENCES room(room_number)
+    PRIMARY KEY(order_id),
+    FOREIGN KEY(room_number) REFERENCES room(room_number) ON UPDATE CASCADE
 );
 
 
@@ -47,24 +53,15 @@ CREATE TABLE food_factor (
     id INT AUTO_INCREMENT,
     food_id INT,
     factor_id INT,
+    order_id INT,
     PRIMARY KEY(id),
-    FOREIGN KEY(food_id) REFERENCES food(food_id),
-    FOREIGN KEY(factor_id) REFERENCES room_factor(factor_id) ON DELETE CASCADE
+    FOREIGN KEY(order_id) REFERENCES order_factor(order_id) ON DELETE CASCADE,
+    FOREIGN KEY(food_id) REFERENCES food(food_id)
 );
 
 
 DELIMITER $$
-CREATE TRIGGER empty_room AFTER DELETE ON room_factor 
-FOR EACH ROW BEGIN
-    UPDATE room
-    SET check_in_date = NULL, check_out_date = NULL, costumer_id = NULL
-    WHERE room_number = OLD.room_number;
-END$$
-DELIMITER ;
-
-
-DELIMITER $$
-CREATE TRIGGER remove_costumer AFTER DELETE ON room_factor
+CREATE TRIGGER remove_costumer AFTER UPDATE ON room
 FOR EACH ROW BEGIN
     DELETE FROM costumer
     WHERE OLD.room_number = costumer.room_number;
