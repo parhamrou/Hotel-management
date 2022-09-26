@@ -17,4 +17,8 @@ public class SQLQueries {
     public static String update(String table, String values, String conditions) {
         return String.format("UPDATE %s SET %s WHERE %s;", table, values, conditions);
     }
+
+    public static String insert(String table, String values) {
+        return String.format("INSERT INTO %s VALUES(%s);", table, values);
+    }
 }
