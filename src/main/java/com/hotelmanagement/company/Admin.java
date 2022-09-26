@@ -15,22 +15,16 @@ public class Admin {
         this.password = password;
     }
 
-    private boolean doesUserExist(String username) {
+    public static boolean doesUserExist(String username) {
         try {
-            if (DBConnection.executeQuery(SQLQueries.select("*", "admin", "username = " + username)).next()) {
-                return true;
-            }
+            return DBConnection.executeQuery(SQLQueries.select("*", "admin", "username = " + username)).next();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return false;
     }
 
-    public boolean addAdmin(String username, String password) {
-        if (doesUserExist(username)) {
-            return false;
-        }
-        return DBConnection.execute(SQLQueries.insert("admin", String.format("%s, %s", username, password)));
+    public static void addAdmin(Admin admin) {
+        DBConnection.execute(SQLQueries.insert("admin", String.format("%s, %s", admin.getUsername(), admin.getPassword())));
     }
 
     public void setUsername(String username) {

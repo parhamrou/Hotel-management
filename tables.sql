@@ -34,9 +34,10 @@ ADD FOREIGN KEY(room_number) REFERENCES room(room_number) ON DELETE SET NULL;
 
 
 CREATE TABLE food (
-    food_id INT PRIMARY KEY,
+    food_id INT AUTO_INCREMENT,
     food_name VARCHAR(20),
-    price INT
+    price INT,
+    PRIMARY KEY(food_id)
 );
 
 

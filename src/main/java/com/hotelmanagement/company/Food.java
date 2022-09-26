@@ -3,16 +3,29 @@ package com.hotelmanagement.company;
 import com.hotelmanagement.Database.DBConnection;
 import com.hotelmanagement.Database.SQLQueries;
 
+import java.sql.SQLException;
+
 public class Food {
 
     private int id;
     private String name;
     private int price;
 
-    public Food(int id, String name, int price) {
-        this.id = id;
+    public Food(String name, int price) {
         this.name = name;
         this.price = price;
+    }
+
+    public static boolean doesFoodExist(String name) {
+        try {
+            return DBConnection.executeQuery(SQLQueries.select("*", "food", "food_name = " + name)).next();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void addFood(Food food) {
+        DBConnection.execute(SQLQueries.insert("food", "food_name, price", String.format("%s, %s", food.getName(), food.getPrice())));
     }
 
     public void remove() {

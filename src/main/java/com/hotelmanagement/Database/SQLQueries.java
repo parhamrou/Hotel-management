@@ -21,4 +21,9 @@ public class SQLQueries {
     public static String insert(String table, String values) {
         return String.format("INSERT INTO %s VALUES(%s);", table, values);
     }
+
+    public static String insert(String table, String attributesList, String values) {
+        return String.format("INSERT INTO %s (%s) VALUES(%s);", table, attributesList, values);
+    }
+
 }
