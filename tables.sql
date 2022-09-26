@@ -53,7 +53,6 @@ CREATE TABLE order_factor (
 CREATE TABLE food_factor (
     id INT AUTO_INCREMENT,
     food_id INT,
-    factor_id INT,
     order_id INT,
     PRIMARY KEY(id),
     FOREIGN KEY(order_id) REFERENCES order_factor(order_id) ON DELETE CASCADE,
