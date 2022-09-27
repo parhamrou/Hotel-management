@@ -17,48 +17,35 @@ public class OrderFactor {
     public OrderFactor(int roomNumber, ArrayList<Food> foods) {
         this.roomNumber = roomNumber;
         this.foods = foods;
+        this.totalPrice = 0;
     }
 
     private void setNewId() {
-        ResultSet resultSet = DBConnection.executeQuery(SQLQueries.select("COALESCE(MAX(order_id), 0)", "order_factor"));
-        try {
-            System.out.println("Max id is " + resultSet.getInt(1));
-            this.id = resultSet.getInt(1) + 1;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        this.id = SQLQueries.getMaxId("order_id", "order_factor") + 1;
     }
 
-    public void addFoodFactor(Food food) {
-        try {
-            ResultSet resultSet = DBConnection.executeQuery(SQLQueries.select("COALESCE(MAX(id), 0)", "food_factor"));
-            System.out.println("Max id is " + resultSet.getInt(1));
-            int id = resultSet.getInt(1) + 1;
+    public void addFoodToFactor(Food food) {
+            totalPrice += food.getPrice();
+            int id = SQLQueries.getMaxId("id", "food_factor") + 1;
             DBConnection.execute(SQLQueries.insert("food_factor", String.format("%d, %d, %d", id, food.getId(), this.getId())));
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    }
+
+    public void removeFoodFromFactor(Food food) {
+            totalPrice -= food.getPrice();
+            foods.remove(food);
+            DBConnection.execute(SQLQueries.delete("food_factor", "food_id = " + food.getId(), 1));
     }
 
     private void addFoodFactors() {
         for (Food food : foods) {
-            addFoodFactor(food);
+            addFoodToFactor(food);
         }
     }
 
-    public void addFactor(OrderFactor orderFactor) {
+    public void addFactor() {
         setNewId();
         addFoodFactors();
-        calculateTotalPrice();
-        DBConnection.execute(SQLQueries.insert("order_factor", String.format("%d, %d, %d", orderFactor.getId(), orderFactor.getRoomNumber(), orderFactor.getTotalPrice())));
-    }
-
-    private void calculateTotalPrice() {
-        int total = 0;
-        for (Food food : foods) {
-            total += food.getPrice();
-        }
-        this.totalPrice = total;
+        DBConnection.execute(SQLQueries.insert("order_factor", String.format("%d, %d, %d", this.id, this.roomNumber, this.totalPrice)));
     }
 
     public int getId() {

@@ -1,5 +1,7 @@
 package com.hotelmanagement.Database;
 
+import java.sql.SQLException;
+
 public class SQLQueries {
 
     public static String select(String items, String table, String conditions) {
@@ -14,6 +16,10 @@ public class SQLQueries {
         return String.format("DELETE FROM %s WHERE %s;", table, conditions);
     }
 
+    public static String delete(String table, String conditions, int limitNumber) {
+        return String.format("DELETE FROM %s WHERE %s LIMIT %d;", table, conditions, limitNumber);
+    }
+
     public static String update(String table, String values, String conditions) {
         return String.format("UPDATE %s SET %s WHERE %s;", table, values, conditions);
     }
@@ -24,6 +30,14 @@ public class SQLQueries {
 
     public static String insert(String table, String attributesList, String values) {
         return String.format("INSERT INTO %s (%s) VALUES(%s);", table, attributesList, values);
+    }
+
+    public static int getMaxId(String columnName, String table) {
+        try {
+            return DBConnection.executeQuery(SQLQueries.select(String.format("COALESCE(MAX(%s), 0)", columnName), table)).getInt(1);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

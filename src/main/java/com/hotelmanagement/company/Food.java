@@ -26,20 +26,12 @@ public class Food {
     }
 
     private void setNewId() {
-        ResultSet resultSet = DBConnection.executeQuery(SQLQueries.select("COALESCE(MAX(food_id), 0)", "food"));
-        try {
-            if (resultSet.next()) {
-                System.out.println("Max id is " + resultSet.getInt(1));
-                this.id = resultSet.getInt(1) + 1;
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        this.id = SQLQueries.getMaxId("food_id", "food") + 1;
     }
 
-    private void addFood(Food food) {
+    private void addFood() {
         setNewId();
-        DBConnection.execute(SQLQueries.insert("food", String.format("%d, %s, %d", food.getId(), food.getName(), food.getPrice())));
+        DBConnection.execute(SQLQueries.insert("food", String.format("%d, %s, %d", this.id, this.name, this.price)));
     }
 
     public void remove() {

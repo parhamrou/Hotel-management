@@ -8,13 +8,14 @@ CREATE TABLE admin (
 
 
 CREATE TABLE costumer (
-    id INT PRIMARY KEY,
+    id INT AUTO_INCREMENT,
     first_name VARCHAR(20),
     last_name VARCHAR(20),
     age INT,
     national_id VARCHAR(15),
     room_number INT,
-    phone_number VARCHAR(17)
+    phone_number VARCHAR(17),
+    PRIMARY KEY(id)
 );
 
 
