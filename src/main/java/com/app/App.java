@@ -1,5 +1,7 @@
-package com.hotelmanagement;
+package com.app;
 
+import com.controllers.LoginController;
+import com.database.DBConnection;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +12,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class App extends Application {
 
@@ -19,7 +23,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        //root = FXMLLoader.load(LoginController.class.getResource("Logi.fxml"));
+        root = FXMLLoader.load(LoginController.class.getResource("Login.fxml"));
         scene = new Scene(root);
         stage = primaryStage;
         stage.setScene(scene);
@@ -28,6 +32,7 @@ public class App extends Application {
 
 
     public static void main(String[] args) {
+        DBConnection.connect();
         launch();
     }
 

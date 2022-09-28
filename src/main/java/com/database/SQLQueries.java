@@ -1,10 +1,11 @@
-package com.hotelmanagement.Database;
+package com.database;
 
 import java.sql.SQLException;
 
 public class SQLQueries {
 
     public static String select(String items, String table, String conditions) {
+        System.out.println(String.format("SELECT %s FROM %s WHERE %s;", items, table, conditions));
         return String.format("SELECT %s FROM %s WHERE %s;", items, table, conditions);
     }
 

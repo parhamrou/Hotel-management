@@ -1,7 +1,7 @@
-package com.hotelmanagement.company;
+package com.company;
 
-import com.hotelmanagement.Database.DBConnection;
-import com.hotelmanagement.Database.SQLQueries;
+import com.database.DBConnection;
+import com.database.SQLQueries;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -1,7 +1,7 @@
-package com.hotelmanagement.company;
+package com.company;
 
-import com.hotelmanagement.Database.DBConnection;
-import com.hotelmanagement.Database.SQLQueries;
+import com.database.DBConnection;
+import com.database.SQLQueries;
 
 public class Room {
 
@@ -14,7 +14,7 @@ public class Room {
     }
 
     public static void checkIn(int roomNumber, int costumerId, String checkInDate, String checkOutDate) {
-        DBConnection.execute(SQLQueries.update("room", String.format("costumer_id = %s, check_in_date = %s, check_out_date = %s", costumerId, checkInDate, checkOutDate), "room_number = " + roomNumber));
+        DBConnection.execute(SQLQueries.update("room", String.format("costumer_id = \"%s\", check_in_date = \"%s\", check_out_date = \"%s\"", costumerId, checkInDate, checkOutDate), "room_number = " + roomNumber));
     }
 
     public static void checkOut(int roomNumber) {

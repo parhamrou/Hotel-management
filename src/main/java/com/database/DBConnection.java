@@ -1,4 +1,4 @@
-package com.hotelmanagement.Database;
+package com.database;
 import java.sql.*;
 
 /**
@@ -15,10 +15,12 @@ public class DBConnection {
     /**
      * This method creates connection and then creates a statement to access to the database.
      */
-    public void connect() {
+    public static void connect() {
         try {
+            System.out.println("Trying to connect to the database...");
             connection = DriverManager.getConnection(DB_URL, USER, PASS);
             statement = connection.createStatement();
+            System.out.println("Connected to the database.");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
