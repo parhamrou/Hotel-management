@@ -5,34 +5,12 @@ import com.hotelmanagement.Database.SQLQueries;
 
 public class Costumer {
 
-    private int id;
-    private String firstName;
-    private String lastName;
-    private int age;
-    private String nationalId;
-    private int roomNumber;
-    private String phoneNumber;
 
-
-    public Costumer(String firstName, String lastName, int age, String nationalId, int roomNumber, String phoneNumber) {
-        this.firstName  = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.nationalId = nationalId;
-        this.roomNumber = roomNumber;
-        this.phoneNumber = phoneNumber;
+    public static void addCostumer(String firstName, String lastName, int age, String nationalId, int roomNumber, String phoneNumber) {
+        DBConnection.execute(SQLQueries.insert("costumer", "first_name, last_name, age, national_id, room_number, phone_number", String.format("%s, %s, %d, %s, %d, %s", firstName, lastName, age, nationalId, roomNumber, phoneNumber)));
     }
 
-    private void setNewId() {
-        this.id = SQLQueries.getMaxId("id", "costumer") + 1;
-    }
-
-    public void addCostumer() {
-        setNewId();
-        DBConnection.execute(SQLQueries.insert("costumer", String.format("%d, %s, %s, %d, %s, %d, %s", this.id, this.firstName, this.lastName, this.age, this.nationalId, this.roomNumber, this.phoneNumber)));
-    }
-
-    public void remove() {
-        DBConnection.execute(SQLQueries.delete("costumer", "id = " + this.id));
+    public static void remove(int id) {
+        DBConnection.execute(SQLQueries.delete("costumer", "id = " + id));
     }
 }

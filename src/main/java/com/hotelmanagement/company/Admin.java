@@ -7,13 +7,6 @@ import java.sql.SQLException;
 
 public class Admin {
 
-    private String username;
-    private String password;
-
-    public Admin(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
 
     public static boolean doesUserExist(String username) {
         try {
@@ -23,25 +16,18 @@ public class Admin {
         }
     }
 
-    public static void addAdmin(Admin admin) {
-        DBConnection.execute(SQLQueries.insert("admin", String.format("%s, %s", admin.getUsername(), admin.getPassword())));
+    public static void addAdmin(String username, String password) {
+        DBConnection.execute(SQLQueries.insert("admin", String.format("%s, %s", username, password)));
     }
 
-    public void setUsername(String username) {
-        DBConnection.execute(SQLQueries.update("admin", "username = " + username, "username = " + this.username));
-        this.username = username;
+    public static void removeAdmin(String username) {
+        DBConnection.execute(SQLQueries.delete("admin", "username = " + username));
+    }
+    public static void setUsername(String newUsername, String oldUsername) {
+        DBConnection.execute(SQLQueries.update("admin", "username = " + newUsername, "username = " + oldUsername));
     }
 
-    public void setPassword(String password) {
-        DBConnection.execute(SQLQueries.update("admin", "password = " + password, "username = " + this.username));
-        this.password = password;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
+    public void setPassword(String newPassword, String username) {
+        DBConnection.execute(SQLQueries.update("admin", "password = " + newPassword, "username = " + username));
     }
 }

@@ -8,15 +8,6 @@ import java.sql.SQLException;
 
 public class Food {
 
-    private int id;
-    private String name;
-    private int price;
-
-    public Food(String name, int price) {
-        this.name = name;
-        this.price = price;
-    }
-
     public static boolean doesFoodExist(String name) {
         try {
             return DBConnection.executeQuery(SQLQueries.select("*", "food", "food_name = " + name)).next();
@@ -25,38 +16,19 @@ public class Food {
         }
     }
 
-    private void setNewId() {
-        this.id = SQLQueries.getMaxId("food_id", "food") + 1;
+    public static void add(String name, int price) {
+        DBConnection.execute(SQLQueries.insert("food", "food_name, price", String.format("%s, %d", name, price)));
     }
 
-    private void addFood() {
-        setNewId();
-        DBConnection.execute(SQLQueries.insert("food", String.format("%d, %s, %d", this.id, this.name, this.price)));
-    }
-
-    public void remove() {
+    public static void remove(int id) {
         DBConnection.execute(SQLQueries.delete("food", "food_id = " + id));
     }
 
-    public void setName(String name) {
-        DBConnection.execute(SQLQueries.update("food", "food_name = " + name, "food_id = " + id));
-        this.name = name;
+    public static void setName(String newName, int id) {
+        DBConnection.execute(SQLQueries.update("food", "food_name = " + newName, "food_id = " + id));
     }
 
-    public void setPrice(int price) {
-        DBConnection.execute(SQLQueries.update("food", "price = " + price, "food_id = " + id));
-        this.price = price;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public String getName() {
-        return name;
+    public void setPrice(int newPrice, int id) {
+        DBConnection.execute(SQLQueries.update("food", "price = " + newPrice, "food_id = " + id));
     }
 }

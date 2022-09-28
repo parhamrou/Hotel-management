@@ -6,61 +6,34 @@ import com.hotelmanagement.Database.SQLQueries;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class OrderFactor {
 
-    private int id;
-    private int roomNumber;
-    private ArrayList<Food> foods;
-    private int totalPrice;
-
-    public OrderFactor(int roomNumber, ArrayList<Food> foods) {
-        this.roomNumber = roomNumber;
-        this.foods = foods;
-        this.totalPrice = 0;
-    }
-
-    private void setNewId() {
-        this.id = SQLQueries.getMaxId("order_id", "order_factor") + 1;
-    }
-
-    public void addFoodToFactor(Food food) {
-            totalPrice += food.getPrice();
-            int id = SQLQueries.getMaxId("id", "food_factor") + 1;
-            DBConnection.execute(SQLQueries.insert("food_factor", String.format("%d, %d, %d", id, food.getId(), this.getId())));
-    }
-
-    public void removeFoodFromFactor(Food food) {
-            totalPrice -= food.getPrice();
-            foods.remove(food);
-            DBConnection.execute(SQLQueries.delete("food_factor", "food_id = " + food.getId(), 1));
-    }
-
-    private void addFoodFactors() {
-        for (Food food : foods) {
-            addFoodToFactor(food);
+    public static void addFactor(int roomNumber, ArrayList<Map<Integer, Integer>> foods) {
+        int id = SQLQueries.getMaxId("order_id", "order_factor") + 1;
+        for (Map<Integer, Integer> food : foods) {
+            addFoodToFactor(food, id);
         }
+        int totalPrice = getTotalPrice(id);
+        DBConnection.execute(SQLQueries.insert("order_factor", String.format("%d, %d, %d", id, roomNumber, totalPrice)));
     }
 
-    public void addFactor() {
-        setNewId();
-        addFoodFactors();
-        DBConnection.execute(SQLQueries.insert("order_factor", String.format("%d, %d, %d", this.id, this.roomNumber, this.totalPrice)));
+    public static void addFoodToFactor(Map<Integer, Integer> food, int id) {
+        int foodId = (int) food.keySet().toArray()[0];
+        DBConnection.execute(SQLQueries.insert("food_factor", "food_id, order_id", String.format("%d, %d", foodId, id)));
     }
 
-    public int getId() {
-        return id;
+    public static void removeFoodFromFactor(int factorId, int foodId) {
+            DBConnection.execute(SQLQueries.delete("food_factor", String.format("food_id = %s AND factor_id = %s", foodId, factorId)));
     }
 
-    public int getRoomNumber() {
-        return roomNumber;
-    }
-
-    public int getTotalPrice() {
-        return totalPrice;
-    }
-
-    public ArrayList<Food> getFoods() {
-        return foods;
+    public static int getTotalPrice(int orderId) {
+        ResultSet resultSet = DBConnection.executeQuery(SQLQueries.select("SUM(price)", "food_factor", "order_id = " + orderId));
+        try {
+            return resultSet.getInt(1);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
