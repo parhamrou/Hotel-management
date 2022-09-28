@@ -23,9 +23,9 @@ CREATE TABLE room (
     room_number INT PRIMARY KEY,
     capacity INT,
     price_per_day INT,
-    check_in_date DATE,
-    check_out_date DATE,
-    costumer_id INT,
+    check_in_date DATE DEFAULT NULL,
+    check_out_date DATE DEFAULT  NULL,
+    costumer_id INT DEFAULT NULL,
     FOREIGN KEY(costumer_id) REFERENCES costumer(id) ON DELETE SET NULL
 );
 
