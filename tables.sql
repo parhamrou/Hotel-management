@@ -62,11 +62,71 @@ CREATE TABLE food_factor (
 );
 
 
+Create TABLE log (
+    id INT AUTO_INCREMENT,
+    type VARCHAR(20),
+    description VARCHAR(30),
+    time DATETIME default CURRENT_TIMESTAMP,
+    PRIMARY KEY(id)
+);
+
+# Triggers
 DELIMITER $$
 CREATE TRIGGER remove_costumer AFTER UPDATE ON room
 FOR EACH ROW BEGIN
-    DELETE FROM costumer
-    WHERE OLD.room_number = costumer.room_number;
+    IF NEW.check_in_date IS NULL THEN
+        DELETE FROM costumer
+        WHERE OLD.room_number = costumer.room_number;
+    END IF;
 END$$
+
+CREATE TRIGGER add_costumer AFTER INSERT ON costumer
+    FOR EACH ROW BEGIN
+        INSERT INTO log(type, description) VALUES("add_costumer", CONCAT("Insert new costumer with national id: ", NEW.national_id));
+End$$
+
+CREATE TRIGGER remove_costumer AFTER DELETE ON costumer
+    FOR EACH ROW BEGIN
+    INSERT INTO log(type, description) VALUES("remove_costumer", CONCAT("Remove costumer with national id: ", OLD.national_id));
+End$$
+
+CREATE TRIGGER add_admin AFTER INSERT ON admin
+    FOR EACH ROW BEGIN
+    INSERT INTO log(type, description) VALUES("add_admin", CONCAT("Insert new admin with username: ", NEW.username));
+End$$
+
+CREATE TRIGGER remove_admin AFTER DELETE ON admin
+    FOR EACH ROW BEGIN
+    INSERT INTO log(type, description) VALUES("remove_admin", CONCAT("Remove admin with username: ", OLD.username));
+End$$
+
+CREATE TRIGGER check_in AFTER UPDATE ON room
+    FOR EACH ROW BEGIN
+        IF NEW.check_in_date IS NOT NULL THEN
+            INSERT INTO log(type, description) VALUES("check_out", CONCAT("Check in for room ", NEW.room_number));
+        END IF;
+End$$
+
+CREATE TRIGGER check_out AFTER UPDATE ON room
+    FOR EACH ROW BEGIN
+        IF NEW.check_in_date IS NULL THEN
+            INSERT INTO log(type, description) VALUES("check_out", CONCAT("Check out for room ", OLD.room_number));
+        END IF;
+End$$
+
+CREATE TRIGGER add_food AFTER INSERT ON food
+    FOR EACH ROW BEGIN
+    INSERT INTO log(type, description) VALUES("add_food", CONCAT("Insert new food with name ", NEW.food_name));
+End$$
+
+CREATE TRIGGER remove_food AFTER DELETE ON food
+    FOR EACH ROW BEGIN
+    INSERT INTO log(type, description) VALUES("remove_food", CONCAT("Remove food with name ", OLD.food_name));
+End$$
+
+CREATE TRIGGER add_order AFTER INSERT ON order_factor
+    FOR EACH ROW BEGIN
+    INSERT INTO log(type, description) VALUES("add_order", CONCAT("Insert new order for room ", NEW.room_number));
+End$$
 
 DELIMITER ;
