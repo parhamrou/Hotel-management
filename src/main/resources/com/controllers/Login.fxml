@@ -10,21 +10,21 @@
 
 <AnchorPane fx:id="background" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.LoginController">
    <children>
-      <AnchorPane layoutX="288.0" layoutY="193.0" prefHeight="415.0" prefWidth="624.0" style="-fx-background-color: #dfbe9f;">
+      <AnchorPane layoutX="288.0" layoutY="193.0" prefHeight="415.0" prefWidth="624.0" style="-fx-background-color: #ac7339;">
          <children>
             <TextField fx:id="username" layoutX="111.0" layoutY="133.0" prefHeight="35.0" prefWidth="403.0" promptText="username" />
             <PasswordField fx:id="password" layoutX="111.0" layoutY="223.0" prefHeight="35.0" prefWidth="403.0" promptText="password" />
-            <Button layoutX="111.0" layoutY="308.0" mnemonicParsing="false" onAction="#loginButtonPressed" prefHeight="47.0" prefWidth="403.0" style="-fx-background-color: #cc9766#cc9766;" text="Login">
+            <Button layoutX="111.0" layoutY="308.0" mnemonicParsing="false" onAction="#loginButtonPressed" prefHeight="47.0" prefWidth="403.0" style="-fx-background-color: #86592d;" text="Login" textFill="#d3d3d3">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Button>
-            <Text fx:id="alertText" layoutX="111.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="alertText" fill="#ffe6e6" layoutX="111.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
             <Label layoutX="193.0" layoutY="45.0" text="Paradise Hotel" textAlignment="CENTER">
                <font>
                   <Font name="DejaVu Serif Condensed Bold" size="32.0" />
                </font>
             </Label>
-            <Label layoutX="262.0" layoutY="93.0" text="Welcome back!" textFill="#5e5e5e">
+            <Label layoutX="262.0" layoutY="93.0" text="Welcome back!" textFill="#404040">
                <font>
                   <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                </font>

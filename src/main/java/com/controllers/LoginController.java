@@ -1,5 +1,6 @@
 package com.controllers;
 
+import com.app.App;
 import com.company.Admin;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,7 +36,7 @@ public class LoginController implements Initializable {
         if (!Admin.login(username.getText(), password.getText())) {
             alertText.setText("username or password is incorrect!");
         }
-        alertText.setText("You entered!");
+        App.switchScene(event, MainPageController.class.getResource("MainPage.fxml"));
     }
 
     @Override
