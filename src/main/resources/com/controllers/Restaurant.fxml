@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="background" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.RestaurantController">
+   <children>
+      <Button fx:id="addOrder" layoutX="214.0" layoutY="248.0" mnemonicParsing="false" onAction="#addOrderButtonPressed" prefHeight="54.0" prefWidth="772.0" style="-fx-background-color: rgb(191, 128, 64, 0.7); -fx-border-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="Add Order" textFill="WHITESMOKE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="foods" layoutX="214.0" layoutY="428.0" mnemonicParsing="false" onAction="#foodsButtonPressed" prefHeight="54.0" prefWidth="772.0" style="-fx-background-color: rgb(191, 128, 64, 0.7); -fx-border-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="Foods" textFill="WHITESMOKE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="exit" layoutX="214.0" layoutY="608.0" mnemonicParsing="false" onAction="#exitButtonPressed" prefHeight="54.0" prefWidth="772.0" style="-fx-background-color: rgb(191, 128, 64, 0.7); -fx-border-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="Exit" textFill="WHITESMOKE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="476.0" layoutY="92.0" text="Restaurant" textFill="WHITESMOKE">
+         <font>
+            <Font name="Yrsa Medium" size="56.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

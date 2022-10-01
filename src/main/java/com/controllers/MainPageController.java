@@ -6,11 +6,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainPageController implements Initializable {
+
+    @FXML
+    private AnchorPane background;
 
     @FXML
     private Button events;
@@ -54,13 +58,13 @@ public class MainPageController implements Initializable {
     }
 
     private void setButtonSetting(Button button) {
-        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #8c8c8c"));
-        button.setOnMouseExited(e -> button.setStyle("-fx-background-color:  #999999"));
+        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: rgb(172, 115, 57, 0.6); -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
+        button.setOnMouseExited(e -> button.setStyle("-fx-background-color: rgb(191, 128, 64, 0.6); -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // setting buttons setting
+        background.setStyle("-fx-background-image: url('https://cdn.wallpaper.com/main/styles/responsive_1680w_scale/s3/muji-hotel-shenzhen-1.jpg');");
         Button[] buttons = {exit, reception, restaurant, events, setting};
         for (Button button : buttons) {
             setButtonSetting(button);
