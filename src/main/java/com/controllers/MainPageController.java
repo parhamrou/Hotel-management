@@ -1,5 +1,7 @@
 package com.controllers;
 
+import com.app.App;
+import com.company.Admin;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -25,10 +27,6 @@ public class MainPageController implements Initializable {
     @FXML
     private Button setting;
 
-    private void setButtonSetting(Button button) {
-        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #999966"));
-        button.setOnMouseExited(e -> button.setStyle("-fx-background-color: #a3a375"));
-    }
     @FXML
     void eventsButtonPressed(ActionEvent event) {
 
@@ -36,7 +34,8 @@ public class MainPageController implements Initializable {
 
     @FXML
     void exitButtonPressed(ActionEvent event) {
-
+        Admin.logout();
+        App.switchScene(event, LoginController.class.getResource("Login.fxml"));
     }
 
     @FXML
@@ -52,6 +51,11 @@ public class MainPageController implements Initializable {
     @FXML
     void settingButtonPressed(ActionEvent event) {
 
+    }
+
+    private void setButtonSetting(Button button) {
+        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #8c8c8c"));
+        button.setOnMouseExited(e -> button.setStyle("-fx-background-color:  #999999"));
     }
 
     @Override

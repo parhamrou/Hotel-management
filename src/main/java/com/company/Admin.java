@@ -33,6 +33,12 @@ public class Admin {
         }
     }
 
+    public static void logout() {
+        username = null;
+        password = null;
+        logedIn = false;
+    }
+
     public static void addAdmin(String username, String password) {
         DBConnection.execute(SQLQueries.insert("admin", String.format("\"%s\", \"%s\"", username, password)));
     }

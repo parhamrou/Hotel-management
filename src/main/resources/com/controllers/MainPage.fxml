@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #adad85;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.MainPageController">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #a6a6a6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.MainPageController">
    <children>
       <Label layoutX="443.0" layoutY="26.0" prefHeight="130.0" prefWidth="328.0" text="Paradise Hotel" textAlignment="CENTER" textFill="#908773">
          <font>
             <Font name="Yrsa Medium" size="56.0" />
          </font>
       </Label>
-      <Button fx:id="reception" alignment="CENTER" layoutX="239.0" layoutY="181.0" mnemonicParsing="false" onAction="#receptionButtonPressed" prefHeight="54.0" prefWidth="722.0" style="-fx-background-color: #a3a375; -fx-border-color: #adad85; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="    Reception">
+      <Button fx:id="reception" alignment="CENTER" layoutX="239.0" layoutY="181.0" mnemonicParsing="false" onAction="#receptionButtonPressed" prefHeight="54.0" prefWidth="722.0" style="-fx-background-color: #999999; -fx-border-color: #999999; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="    Reception">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -29,7 +29,7 @@
             <DropShadow blurType="TWO_PASS_BOX" />
          </effect>
       </Button>
-      <Button fx:id="restaurant" alignment="CENTER" layoutX="239.0" layoutY="311.0" mnemonicParsing="false" onAction="#restaurantButtonPressed" prefHeight="54.0" prefWidth="722.0" style="-fx-background-color: #a3a375; -fx-border-color: #adad85; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="    Restaurant">
+      <Button fx:id="restaurant" alignment="CENTER" layoutX="239.0" layoutY="311.0" mnemonicParsing="false" onAction="#restaurantButtonPressed" prefHeight="54.0" prefWidth="722.0" style="-fx-background-color: #999999; -fx-border-color: #999999; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="    Restaurant">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -43,7 +43,7 @@
             <DropShadow blurType="TWO_PASS_BOX" />
          </effect>
       </Button>
-      <Button fx:id="setting" alignment="CENTER" layoutX="239.0" layoutY="441.0" mnemonicParsing="false" onAction="#settingButtonPressed" prefHeight="54.0" prefWidth="722.0" style="-fx-background-color: #a3a375; -fx-border-color: #adad85; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="    Setting">
+      <Button fx:id="setting" alignment="CENTER" layoutX="239.0" layoutY="441.0" mnemonicParsing="false" onAction="#settingButtonPressed" prefHeight="54.0" prefWidth="722.0" style="-fx-background-color: #999999; -fx-border-color: #999999; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="    Setting">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -57,7 +57,7 @@
             <DropShadow blurType="TWO_PASS_BOX" />
          </effect>
       </Button>
-      <Button fx:id="events" alignment="CENTER" layoutX="239.0" layoutY="571.0" mnemonicParsing="false" onAction="#eventsButtonPressed" prefHeight="54.0" prefWidth="722.0" style="-fx-background-color: #a3a375; -fx-border-color: #adad85; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="    Events logs">
+      <Button fx:id="events" alignment="CENTER" layoutX="239.0" layoutY="571.0" mnemonicParsing="false" onAction="#eventsButtonPressed" prefHeight="54.0" prefWidth="722.0" style="-fx-background-color: #999999; -fx-border-color: #999999; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="    Events logs">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -71,7 +71,7 @@
             <DropShadow blurType="TWO_PASS_BOX" />
          </effect>
       </Button>
-      <Button fx:id="exit" alignment="CENTER" layoutX="239.0" layoutY="701.0" mnemonicParsing="false" onAction="#exitButtonPressed" prefHeight="54.0" prefWidth="722.0" style="-fx-background-color: #a3a375; -fx-border-color: #adad85; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="    Exit">
+      <Button fx:id="exit" alignment="CENTER" layoutX="239.0" layoutY="701.0" mnemonicParsing="false" onAction="#exitButtonPressed" prefHeight="54.0" prefWidth="722.0" style="-fx-background-color: #999999; -fx-border-color: #999999; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="    Exit">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
