@@ -49,7 +49,7 @@ public class MainPageController implements Initializable {
 
     @FXML
     void restaurantButtonPressed(ActionEvent event) {
-
+        App.switchScene(event, RestaurantController.class.getResource("Restaurant.fxml"));
     }
 
     @FXML

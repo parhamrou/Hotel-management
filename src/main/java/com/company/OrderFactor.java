@@ -10,18 +10,19 @@ import java.util.Map;
 
 public class OrderFactor {
 
-    public static void addFactor(int roomNumber, ArrayList<Map<Integer, Integer>> foods) {
+    public static void addFactor(int roomNumber, Map<Integer, Integer> foods) {
         int id = SQLQueries.getMaxId("order_id", "order_factor") + 1;
-        for (Map<Integer, Integer> food : foods) {
-            addFoodToFactor(food, id);
+        for (Map.Entry<Integer, Integer> food : foods.entrySet()) {
+            addFoodToFactor(food.getKey(), food.getValue(), id);
         }
         int totalPrice = getTotalPrice(id);
         DBConnection.execute(SQLQueries.insert("order_factor", String.format("%d, %d, %d", id, roomNumber, totalPrice)));
     }
 
-    public static void addFoodToFactor(Map<Integer, Integer> food, int id) {
-        int foodId = (int) food.keySet().toArray()[0];
-        DBConnection.execute(SQLQueries.insert("food_factor", "food_id, order_id", String.format("%d, %d", foodId, id)));
+    public static void addFoodToFactor(int foodId, int foodNumber, int orderId) {
+        for (int i = 0; i < foodNumber; i++) {
+            DBConnection.execute(SQLQueries.insert("food_factor", "food_id, order_id", String.format("%d, %d", foodId, orderId)));
+        }
     }
 
     public static void removeFoodFromFactor(int factorId, int foodId) {
