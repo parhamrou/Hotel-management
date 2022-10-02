@@ -11,7 +11,7 @@
       <Text layoutX="123.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="food_id" />
       <Text layoutX="208.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="price" />
       <Text layoutX="282.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="number" />
-      <Button layoutX="421.0" layoutY="6.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="19.0" text="Button" />
-      <Button layoutX="376.0" layoutY="6.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="19.0" text="Button" />
+      <Button layoutX="421.0" layoutY="6.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="19.0" text="Button" />
+      <Button layoutX="376.0" layoutY="6.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="19.0" text="Button" />
    </children>
 </AnchorPane>

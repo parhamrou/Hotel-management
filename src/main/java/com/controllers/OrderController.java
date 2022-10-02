@@ -1,5 +1,6 @@
 package com.controllers;
 
+import com.company.OrderFactor;
 import com.database.DBConnection;
 import com.database.SQLQueries;
 import javafx.event.ActionEvent;
@@ -7,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -23,46 +25,62 @@ public class OrderController implements Initializable {
 
     @FXML
     private VBox foodVbox;
-
     @FXML
     private Text ID;
-
     @FXML
     private Text IDLabel;
-
     @FXML
     private Text alertText;
-
     @FXML
     private Text firstName;
-
     @FXML
     private Text firstNameLabel;
-
     @FXML
     private Text lastName;
-
     @FXML
     private Text lastNameLabel;
-
     @FXML
     private Button searchButton;
-
     @FXML
     private TextField searchTextField;
-
     @FXML
     private Label totalPriceLabel;
-
+    @FXML
+    private Button addButton;
+    @FXML
+    private Text addButtonText;
     @FXML
     private Text totalPriceText;
-
+    @FXML
+    private ScrollPane foodScrollPane;
     private Map<Integer, Integer> orderFoods;
 
     @FXML
     void searchButtonPressed(ActionEvent event) {
-        orderFoods = new HashMap<>();
-        addFoodCell("chicken", 1, 1000);
+        orderFoods.clear();
+        ResultSet result = DBConnection.executeQuery(SQLQueries.select("first_name, last_name, id", "costumer", "room_number = " + Integer.parseInt(searchTextField.getText())));
+        try {
+            if (!result.next()) {
+                alertText.setText("There is no costumer with this room number!");
+                return;
+            }
+            setTextsVisiblity(true);
+            firstName.setText(result.getString("first_name"));
+            lastName.setText(result.getString("last_name"));
+            ID.setText(Integer.toString(result.getInt("id")));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void addButtonPressed(ActionEvent event) {
+        if (orderFoods.isEmpty()) {
+            addButtonText.setText("You haven't entered any items!");
+            return;
+        }
+        OrderFactor.addFactor(Integer.parseInt(searchTextField.getText()), orderFoods);
+        addButtonText.setText("The order is added!");
     }
 
     private void addFoodCell(String food_name, int food_id, int price) {
@@ -129,11 +147,30 @@ public class OrderController implements Initializable {
         }
     }
 
+    private void setTextsVisiblity(boolean visible) {
+        Text[] texts = {firstName, firstNameLabel, lastName, lastNameLabel, ID, IDLabel};
+        for (Text text : texts) {
+            text.setVisible(visible);
+        }
+    }
+    private void setButtonSetting(Button button) {
+        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #996633; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
+        button.setOnMouseExited(e -> button.setStyle("-fx-background-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //createFoodList(DBConnection.executeQuery(SQLQueries.select("*", "food")));
+        setTextsVisiblity(false);
+        orderFoods = new HashMap<>();
+        foodScrollPane.setFitToWidth(true);
         alertText.setText("");
-        searchTextField.setStyle("-fx-text-fill: #653434");
+        addButtonText.setText("");
+        searchTextField.setStyle("-fx-text-fill: #653434; -fx-background-color: #d2a679");
+        Button[] buttons = {searchButton, addButton};
+        for (Button button : buttons) {
+            setButtonSetting(button);
+        }
     }
 }
 

@@ -41,7 +41,7 @@
       <Text fx:id="firstName" fill="#2f2f2f" layoutX="442.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Text fx:id="lastName" fill="#2f2f2f" layoutX="582.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Text fx:id="ID" fill="#2f2f2f" layoutX="697.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <ScrollPane layoutX="31.0" layoutY="164.0" prefHeight="322.0" prefWidth="490.0" style="-fx-background-color: #d2a679;">
+      <ScrollPane fx:id="foodScrollPane" layoutX="31.0" layoutY="164.0" prefHeight="322.0" prefWidth="490.0" style="-fx-background-color: #d2a679;" stylesheets="@Order.css">
          <content>
             <VBox fx:id="foodVbox" prefHeight="322.0" prefWidth="490.0" style="-fx-background-color: #d2a679;" />
          </content>
@@ -75,15 +75,21 @@
             </Label>
          </children>
       </AnchorPane>
-      <Label fx:id="totalPriceLabel" layoutX="593.0" layoutY="134.0" text="Total Price:" textFill="WHITE">
+      <Label fx:id="totalPriceLabel" layoutX="595.0" layoutY="147.0" text="Total Price:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Text fx:id="totalPriceText" fill="WHITE" layoutX="570.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="182.7578125">
+      <Text fx:id="totalPriceText" fill="WHITE" layoutX="571.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="182.7578125">
          <font>
             <Font name="System Bold" size="37.0" />
          </font>
       </Text>
+      <Button fx:id="addButton" layoutX="598.0" layoutY="379.0" mnemonicParsing="false" onAction="#addButtonPressed" prefHeight="60.0" prefWidth="129.0" style="-fx-background-color: #ac7339; -fx-background-radius: 10 10 10 10; -fx-border-radius: 10 10 10 10;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Text fx:id="addButtonText" fill="#653434" layoutX="649.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
    </children>
 </AnchorPane>

@@ -35,7 +35,7 @@ public class RestaurantController implements Initializable {
             Parent root = FXMLLoader.load(OrderController.class.getResource("Order.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Add Order");
-            stage.setScene(new Scene(root, 500, 150));
+            stage.setScene(new Scene(root, 800, 500));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
