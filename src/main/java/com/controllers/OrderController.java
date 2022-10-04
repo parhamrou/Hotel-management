@@ -161,7 +161,7 @@ public class OrderController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //createFoodList(DBConnection.executeQuery(SQLQueries.select("*", "food")));
+        createFoodList(DBConnection.executeQuery(SQLQueries.select("*", "food")));
         setTextsVisiblity(false);
         orderFoods = new HashMap<>();
         foodScrollPane.setFitToWidth(true);

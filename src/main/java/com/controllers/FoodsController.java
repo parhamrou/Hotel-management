@@ -11,6 +11,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class FoodsController implements Initializable {
@@ -66,8 +68,7 @@ public class FoodsController implements Initializable {
             cancelButton(change, false);
             foodName.setDisable(true);
             foodPrice.setDisable(true);
-            //TODO
-            //DBConnection.execute(SQLQueries.update("food", String.format("food_name = \"%s\", food_price = %s", foodName.getText(), foodPrice.getText()), "food_id = " + foodId.getText()));
+            DBConnection.execute(SQLQueries.update("food", String.format("food_name = \"%s\", food_price = %s", foodName.getText(), foodPrice.getText()), "food_id = " + foodId.getText()));
         });
         remove.setOnMouseClicked(e -> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are ou sure that you want to delete this item?", ButtonType.YES, ButtonType.NO);
@@ -77,8 +78,7 @@ public class FoodsController implements Initializable {
             alert.showAndWait();
 
             if (alert.getResult() == ButtonType.YES) {
-                //TODO
-                //DBConnection.execute(SQLQueries.delete("food", "food_id = " + foodId.getText()));
+                DBConnection.execute(SQLQueries.delete("food", "food_id = " + foodId.getText()));
                 foodsVbox.getChildren().remove(cell);
             }
         });
@@ -110,6 +110,19 @@ public class FoodsController implements Initializable {
         button.setVisible(!isCanceled);
     }
 
+    private void createFoodList(ResultSet foods) {
+        try {
+            while (foods.next()) {
+                String foodName = foods.getString("food_name");
+                int foodId = foods.getInt("food_id");
+                int price = foods.getInt("price");
+                addFoodCell(foodId, foodName, price);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @FXML
     void addFoodButtonPressed(ActionEvent event) {
         alertText.setText("");
@@ -128,6 +141,7 @@ public class FoodsController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        createFoodList(DBConnection.executeQuery(SQLQueries.select("*", "food")));
         foodsScrollPane.setFitToWidth(true);
         addFoodButton.setOnMouseEntered(e -> addFoodButton.setStyle("-fx-background-color: #996633; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
         addFoodButton.setOnMouseExited(e -> addFoodButton.setStyle("-fx-background-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));

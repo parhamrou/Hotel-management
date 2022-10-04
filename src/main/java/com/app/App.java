@@ -23,7 +23,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        root = FXMLLoader.load(FoodsController.class.getResource("Foods.fxml"));
+        root = FXMLLoader.load(MainPageController.class.getResource("MainPage.fxml"));
         scene = new Scene(root);
         stage = primaryStage;
         stage.setScene(scene);

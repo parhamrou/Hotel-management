@@ -52,14 +52,5 @@
          </font>
       </Button>
       <Text fx:id="alertText" layoutX="707.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <AnchorPane layoutX="44.0" layoutY="9.0" prefHeight="40.0" prefWidth="712.0" style="-fx-background-color: #ac7339; -fx-background-radius: 10 10 0 0; -fx-border-radius: 10 10 0 0;">
-         <children>
-            <Button layoutX="475.0" layoutY="8.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="80.0" style="-fx-background-color: #d2a679;" text="Button" />
-            <TextField layoutX="27.0" layoutY="8.0" prefHeight="24.0" prefWidth="90.0" />
-            <TextField layoutX="185.0" layoutY="8.0" prefHeight="24.0" prefWidth="120.0" />
-            <TextField layoutX="356.0" layoutY="8.0" prefHeight="24.0" prefWidth="80.0" />
-            <Button layoutX="600.0" layoutY="8.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="80.0" text="Button" />
-         </children>
-      </AnchorPane>
    </children>
 </AnchorPane>

@@ -23,6 +23,9 @@ public class RestaurantController implements Initializable {
     private Button addOrder;
 
     @FXML
+    private Button orders;
+
+    @FXML
     private Button exit;
 
     @FXML
@@ -57,6 +60,11 @@ public class RestaurantController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void ordersButtonPressed(ActionEvent event) {
+        //TODO
     }
 
     private void setButtonSetting(Button button) {
