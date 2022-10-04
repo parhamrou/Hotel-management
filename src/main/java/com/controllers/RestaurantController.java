@@ -34,7 +34,7 @@ public class RestaurantController implements Initializable {
     @FXML
     void addOrderButtonPressed(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(OrderController.class.getResource("Order.fxml"));
+            Parent root = FXMLLoader.load(AddOrderController.class.getResource("AddOrder.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Add Order");
             stage.setScene(new Scene(root, 800, 500));
@@ -64,7 +64,15 @@ public class RestaurantController implements Initializable {
 
     @FXML
     void ordersButtonPressed(ActionEvent event) {
-        //TODO
+        try {
+            Parent root = FXMLLoader.load(OrdersController.class.getResource("Orders.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Orders");
+            stage.setScene(new Scene(root, 800, 500));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void setButtonSetting(Button button) {

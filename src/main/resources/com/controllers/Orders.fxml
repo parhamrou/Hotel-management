@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #c68c53#c68c53;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.OrdersController">
+   <children>
+      <ScrollPane fx:id="ordersScrollPane" layoutX="42.0" layoutY="87.0" prefWidth="719.0" style="-fx-background-color: #d2a679;" stylesheets="@Order.css">
+         <content>
+            <VBox fx:id="ordersVbox" prefHeight="377.0" prefWidth="717.0" style="-fx-background-color: #d2a679;" />
+         </content>
+      </ScrollPane>
+      <AnchorPane layoutX="42.0" layoutY="33.0" prefHeight="54.0" prefWidth="719.0" style="-fx-background-color: #ac7339; -fx-background-radius: 10 10 0 0; -fx-border-radius: 10 10 0 0;">
+         <children>
+            <Label layoutX="29.0" layoutY="17.0" text="order_id" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="154.0" layoutY="17.0" text="room_number" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="332.0" layoutY="17.0" text="total_price" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="496.0" layoutY="17.0" text="time" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="596.0" layoutY="17.0" text="delivered" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

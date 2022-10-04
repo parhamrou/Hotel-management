@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class OrderController implements Initializable {
+public class AddOrderController implements Initializable {
 
     @FXML
     private VBox foodVbox;

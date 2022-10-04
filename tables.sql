@@ -46,7 +46,8 @@ CREATE TABLE order_factor (
     order_id INT AUTO_INCREMENT,
     room_number INT,
     total_price INT,
-    date DATE default CURRENT_DATE,
+    is_delivered BIT DEFAULT 0,
+    time TIMESTAMP default CURRENT_TIMESTAMP,
     PRIMARY KEY(order_id),
     FOREIGN KEY(room_number) REFERENCES room(room_number) ON UPDATE CASCADE
 );
