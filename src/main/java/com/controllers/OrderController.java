@@ -91,29 +91,17 @@ public class OrderController implements Initializable {
         cell.setStyle("-fx-background-color: #bf8040");
         // Add cell texts
         Text foodName = new Text(food_name);
-        foodName.setLayoutX(14);
-        foodName.setLayoutY(23);
+        setText(foodName, 14, 23);
         Text foodId = new Text(Integer.toString(food_id));
-        foodId.setLayoutX(123);
-        foodId.setLayoutY(23);
+        setText(foodId, 123, 23);
         Text foodPrice = new Text(Integer.toString(price));
-        foodPrice.setLayoutX(208);
-        foodPrice.setLayoutY(23);
+        setText(foodPrice, 208, 23);
         Text number = new Text(Integer.toString(0));
-        number.setLayoutX(282);
-        number.setLayoutY(23);
+        setText(number, 282, 23);
         Button add = new Button("+");
-        add.setPrefWidth(21);
-        add.setPrefHeight(21);
-        add.setLayoutX(421);
-        add.setLayoutY(6);
-        add.setStyle("-fx-background-color: #ac7339; -fx-background-radius: 5 5 5 5; -fx-border-radius: 5 5 5 5; -fx-border-color: Black");
+        setButton(add, 421, 6, 21, 21);
         Button remove = new Button("-");
-        remove.setPrefWidth(21);
-        remove.setPrefHeight(21);
-        remove.setLayoutX(376);
-        remove.setLayoutY(6);
-        remove.setStyle("-fx-background-color: #ac7339; -fx-background-radius: 5 5 5 5; -fx-border-radius: 5 5 5 5; -fx-border-color: Black");
+        setButton(remove, 376, 6, 21, 21);
         // Add button functionalities
         add.setOnMouseClicked(e -> {
             number.setText(Integer.toString(Integer.parseInt(number.getText()) + 1));
@@ -132,6 +120,19 @@ public class OrderController implements Initializable {
         });
         cell.getChildren().addAll(foodName, foodId, foodPrice, number, add, remove);
         foodVbox.getChildren().add(cell);
+    }
+
+    private void setText(Text text, double x, double y) {
+        text.setLayoutX(x);
+        text.setLayoutY(y);
+    }
+
+    private void setButton(Button button, double x, double y, double width, double height) {
+        button.setLayoutX(x);
+        button.setLayoutY(y);
+        button.setPrefWidth(width);
+        button.setPrefHeight(height);
+        button.setStyle("-fx-background-color: #ac7339; -fx-background-radius: 5 5 5 5; -fx-border-radius: 5 5 5 5; -fx-border-color: Black");
     }
 
     private void createFoodList(ResultSet foods) {

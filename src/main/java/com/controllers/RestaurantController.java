@@ -12,7 +12,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.lang.reflect.AnnotatedArrayType;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -49,7 +48,15 @@ public class RestaurantController implements Initializable {
 
     @FXML
     void foodsButtonPressed(ActionEvent event) {
-
+        try {
+            Parent root = FXMLLoader.load(FoodsController.class.getResource("Foods.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Foods");
+            stage.setScene(new Scene(root, 800, 500));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void setButtonSetting(Button button) {

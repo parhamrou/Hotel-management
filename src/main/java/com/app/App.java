@@ -1,9 +1,6 @@
 package com.app;
 
-import com.controllers.LoginController;
-import com.controllers.MainPageController;
-import com.controllers.OrderController;
-import com.controllers.RestaurantController;
+import com.controllers.*;
 import com.database.DBConnection;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -26,7 +23,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        root = FXMLLoader.load(RestaurantController.class.getResource("Restaurant.fxml"));
+        root = FXMLLoader.load(FoodsController.class.getResource("Foods.fxml"));
         scene = new Scene(root);
         stage = primaryStage;
         stage.setScene(scene);
@@ -35,6 +32,7 @@ public class App extends Application {
 
 
     public static void main(String[] args) {
+        // TODO
         //DBConnection.connect();
         launch();
     }
