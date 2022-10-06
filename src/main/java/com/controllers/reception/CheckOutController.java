@@ -1,4 +1,4 @@
-package com.controllers;
+package com.controllers.reception;
 
 public class CheckOutController {
 }

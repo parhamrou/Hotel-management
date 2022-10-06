@@ -1,4 +1,4 @@
-package com.controllers;
+package com.controllers.reception;
 
 import com.company.Costumer;
 import com.company.Room;

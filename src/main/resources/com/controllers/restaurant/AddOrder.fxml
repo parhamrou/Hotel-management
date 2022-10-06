@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #c68c53#c68c53;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.AddOrderController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #c68c53#c68c53;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.restaurant.AddOrderController">
    <children>
       <TextField fx:id="searchTextField" layoutX="34.0" layoutY="70.0" prefHeight="35.0" prefWidth="199.0" promptText="search" style="-fx-background-color: #d2a679;" />
       <Label layoutX="34.0" layoutY="36.0" text="Room number" textFill="WHITE">

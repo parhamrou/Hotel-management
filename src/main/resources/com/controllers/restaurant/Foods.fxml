@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #c68c53#c68c53;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.FoodsController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #c68c53#c68c53;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.restaurant.FoodsController">
    <children>
       <ScrollPane fx:id="foodsScrollPane" layoutX="44.0" layoutY="74.0" prefHeight="353.0" prefWidth="712.0" style="-fx-background-color: #d2a679;" stylesheets="@Order.css">
          <content>

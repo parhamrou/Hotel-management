@@ -1,4 +1,4 @@
-package com.controllers;
+package com.controllers.mainPage;
 
 import com.database.DBConnection;
 import com.database.SQLQueries;

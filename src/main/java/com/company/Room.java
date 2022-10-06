@@ -24,6 +24,20 @@ public class Room {
         DBConnection.execute(SQLQueries.update("room", "check_in_date = NULL, check_out_date = NULL, costumer_id = NULL", "room_number = " + roomNumber));
     }
 
+    public static int getTotalCost(int roomNumber) {
+        int total = 0;
+        try {
+            ResultSet foodsCost = DBConnection.executeQuery(SQLQueries.select("SUM(total_price)", "order_factor", "room_number = " + roomNumber));
+            total += foodsCost.getInt(1);
+            ResultSet days = DBConnection.executeQuery(SQLQueries.select("DATEDIFF(DAY, room.check_in_date, room.check_out.date)", "room", "room_number = " + roomNumber));
+            ResultSet pricePerDay = DBConnection.executeQuery(SQLQueries.select("price_per_day", "room", "room_number = " + roomNumber));
+            total += pricePerDay.getInt(1) * days.getInt(1);
+            return total;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static int getCapacity(int roomNumber) {
         ResultSet result = DBConnection.executeQuery(SQLQueries.select("capacity", "room", String.format("room_number = %d", roomNumber)));
         try {

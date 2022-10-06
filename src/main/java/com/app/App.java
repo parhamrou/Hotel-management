@@ -1,6 +1,6 @@
 package com.app;
 
-import com.controllers.*;
+import com.controllers.mainPage.LoginController;
 import com.database.DBConnection;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -12,8 +12,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
 
 public class App extends Application {
 

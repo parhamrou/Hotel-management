@@ -1,7 +1,11 @@
-package com.controllers;
+package com.controllers.mainPage;
 
 import com.app.App;
 import com.company.Admin;
+import com.controllers.mainPage.LoginController;
+import com.controllers.mainPage.LogsController;
+import com.controllers.reception.ReceptionController;
+import com.controllers.restaurant.RestaurantController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

@@ -1,4 +1,4 @@
-package com.controllers;
+package com.controllers.restaurant;
 
 import com.company.OrderFactor;
 import com.database.DBConnection;
