@@ -47,12 +47,12 @@ public class App extends Application {
         }
     }
 
-    public static void newStage(URL url, String title) {
+    public static void newStage(URL url, String title, double width, double height) {
         try {
             Parent newRoot = FXMLLoader.load(url);
             Stage newStage = new Stage();
             newStage.setTitle(title);
-            newStage.setScene(new Scene(root, 800, 500));
+            newStage.setScene(new Scene(newRoot, width, height));
             newStage.show();
         } catch (IOException e) {
             e.printStackTrace();

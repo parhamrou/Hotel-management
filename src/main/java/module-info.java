@@ -4,7 +4,6 @@ module com.example.hotelmanagement {
     requires java.sql;
 
 
-    opens com.controllers to javafx.fxml;
     exports com.app;
     opens com.controllers.reception to javafx.fxml;
     opens com.controllers.restaurant to javafx.fxml;

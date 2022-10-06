@@ -29,7 +29,7 @@ public class RestaurantController implements Initializable {
 
     @FXML
     void addOrderButtonPressed(ActionEvent event) {
-        App.newStage(AddOrderController.class.getResource("AddOrder.fxml"), "Add Order");
+        App.newStage(AddOrderController.class.getResource("AddOrder.fxml"), "Add Order", 800, 500);
     }
 
     @FXML
@@ -39,12 +39,12 @@ public class RestaurantController implements Initializable {
 
     @FXML
     void foodsButtonPressed(ActionEvent event) {
-        App.newStage(FoodsController.class.getResource("Foods.fxml"), "Foods");
+        App.newStage(FoodsController.class.getResource("Foods.fxml"), "Foods", 800, 500);
     }
 
     @FXML
     void ordersButtonPressed(ActionEvent event) {
-        App.newStage(OrdersController.class.getResource("Orders.fxml"), "Orders");
+        App.newStage(OrdersController.class.getResource("Orders.fxml"), "Orders", 800, 500);
     }
 
     private void setButtonSetting(Button button) {

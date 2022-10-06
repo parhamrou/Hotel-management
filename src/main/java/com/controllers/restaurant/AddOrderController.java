@@ -58,7 +58,7 @@ public class AddOrderController implements Initializable {
     @FXML
     void searchButtonPressed(ActionEvent event) {
         orderFoods.clear();
-        ResultSet result = DBConnection.executeQuery(SQLQueries.select("first_name, last_name, id", "costumer", "room_number = " + Integer.parseInt(searchTextField.getText())));
+        ResultSet result = DBConnection.executeQuery(SQLQueries.select("first_name, last_name, id", "costumer", String.format("room_number = %d LIMIT 1", Integer.parseInt(searchTextField.getText()))));
         try {
             if (!result.next()) {
                 alertText.setText("There is no costumer with this room number!");
