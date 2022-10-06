@@ -37,6 +37,7 @@ public class DBConnection {
     }
 
     public static boolean execute(String query) {
+        System.out.println(query);
         try {
             return statement.execute(query);
         } catch (SQLException e) {
@@ -45,6 +46,7 @@ public class DBConnection {
     }
 
     public static ResultSet executeQuery(String query) {
+        System.out.println(query);
         try {
             return statement.executeQuery(query);
         } catch (SQLException e) {

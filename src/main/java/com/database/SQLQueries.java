@@ -29,7 +29,7 @@ public class SQLQueries {
     }
 
     public static String insert(String table, String attributesList, String values) {
-        return String.format("INSERT INTO %s (%s) VALUES(%s);", table, attributesList, values);
+        return String.format("INSERT INTO %s(%s) VALUES(%s);", table, attributesList, values);
     }
 
     public static int getMaxId(String columnName, String table) {

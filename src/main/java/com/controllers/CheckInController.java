@@ -95,7 +95,7 @@ public class CheckInController implements Initializable {
         // Create button
         Button check = new Button("Check");
         check.setPrefHeight(30);
-        check.setLayoutX(715);
+        check.setLayoutX(710);
         check.setLayoutY(15);
         setButton(check);
         // set button action
@@ -134,7 +134,7 @@ public class CheckInController implements Initializable {
     private void setChoiceBoxAction() {
         roomChoiceBox.setOnAction(e -> {
             costumers = new ArrayList<>();
-            costumerVbox.getChildren().removeAll();
+            costumerVbox.getChildren().clear();
             roomNumber = roomChoiceBox.getValue();
             roomCapacity = Room.getCapacity(roomNumber);
             for (int  i = 0; i < roomCapacity; i++) {

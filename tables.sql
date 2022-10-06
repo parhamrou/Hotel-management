@@ -66,14 +66,14 @@ CREATE TABLE food_factor (
 Create TABLE log (
     id INT AUTO_INCREMENT,
     type VARCHAR(20),
-    description VARCHAR(30),
+    description VARCHAR(70),
     time DATETIME default CURRENT_TIMESTAMP,
     PRIMARY KEY(id)
 );
 
 # Triggers
 DELIMITER $$
-CREATE TRIGGER remove_costumer AFTER UPDATE ON room
+CREATE TRIGGER empty_room AFTER UPDATE ON room
 FOR EACH ROW BEGIN
     IF NEW.check_in_date IS NULL THEN
         DELETE FROM costumer
@@ -104,14 +104,14 @@ End$$
 CREATE TRIGGER check_in AFTER UPDATE ON room
     FOR EACH ROW BEGIN
         IF NEW.check_in_date IS NOT NULL THEN
-            INSERT INTO log(type, description) VALUES("check_out", CONCAT("Check in for room ", NEW.room_number));
+            INSERT INTO log(type, description) VALUES("check_out", CONCAT("Check-in for room ", NEW.room_number));
         END IF;
 End$$
 
 CREATE TRIGGER check_out AFTER UPDATE ON room
     FOR EACH ROW BEGIN
         IF NEW.check_in_date IS NULL THEN
-            INSERT INTO log(type, description) VALUES("check_out", CONCAT("Check out for room ", OLD.room_number));
+            INSERT INTO log(type, description) VALUES("check_out", CONCAT("Check-out for room ", OLD.room_number));
         END IF;
 End$$
 
