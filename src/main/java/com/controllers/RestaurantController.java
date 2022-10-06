@@ -83,7 +83,7 @@ public class RestaurantController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         background.setStyle("-fx-background-image: url('https://cdn.wallpaper.com/main/styles/responsive_1680w_scale/s3/muji-hotel-shenzhen-1.jpg');");
-        Button[] buttons = {addOrder, foods, exit};
+        Button[] buttons = {addOrder, foods, exit, orders};
         for (Button button : buttons) {
             setButtonSetting(button);
         }

@@ -26,6 +26,16 @@ public class DBConnection {
         }
     }
 
+    public static void disconnect() {
+        try {
+            System.out.println("Closing connection!");
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static boolean execute(String query) {
         try {
             return statement.execute(query);

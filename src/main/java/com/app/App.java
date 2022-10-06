@@ -23,7 +23,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        root = FXMLLoader.load(MainPageController.class.getResource("MainPage.fxml"));
+        root = FXMLLoader.load(LoginController.class.getResource("Login.fxml"));
         scene = new Scene(root);
         stage = primaryStage;
         stage.setScene(scene);
@@ -33,8 +33,9 @@ public class App extends Application {
 
     public static void main(String[] args) {
         // TODO
-        //DBConnection.connect();
+        DBConnection.connect();
         launch();
+        DBConnection.disconnect();
     }
 
     public static void switchScene(ActionEvent event, URL url)  {

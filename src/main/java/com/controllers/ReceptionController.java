@@ -1,60 +1,55 @@
 package com.controllers;
 
 import com.app.App;
-import com.company.Admin;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainPageController implements Initializable {
+public class ReceptionController implements Initializable {
 
     @FXML
     private AnchorPane background;
 
     @FXML
-    private Button events;
+    private Button checkIn;
+
+    @FXML
+    private Button checkOut;
 
     @FXML
     private Button exit;
 
     @FXML
-    private Button reception;
+    void checkInButtonPressed(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(CheckInController.class.getResource("CheckIn.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Check-in");
+            stage.setScene(new Scene(root, 800, 500));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
-    private Button restaurant;
-
-    @FXML
-    private Button setting;
-
-    @FXML
-    void eventsButtonPressed(ActionEvent event) {
+    void checkOutButtonPressed(ActionEvent event) {
 
     }
 
     @FXML
     void exitButtonPressed(ActionEvent event) {
-        Admin.logout();
-        App.switchScene(event, LoginController.class.getResource("Login.fxml"));
-    }
-
-    @FXML
-    void receptionButtonPressed(ActionEvent event) {
-        App.switchScene(event, ReceptionController.class.getResource("Reception.fxml"));
-    }
-
-    @FXML
-    void restaurantButtonPressed(ActionEvent event) {
-        App.switchScene(event, RestaurantController.class.getResource("Restaurant.fxml"));
-    }
-
-    @FXML
-    void settingButtonPressed(ActionEvent event) {
-
+        App.switchScene(event, MainPageController.class.getResource("MainPage.fxml"));
     }
 
     private void setButtonSetting(Button button) {
@@ -63,14 +58,12 @@ public class MainPageController implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL location, ResourceBundle resources) {
         background.setStyle("-fx-background-image: url('https://cdn.wallpaper.com/main/styles/responsive_1680w_scale/s3/muji-hotel-shenzhen-1.jpg');");
-        Button[] buttons = {exit, reception, restaurant, events, setting};
+        Button[] buttons = {checkIn, checkOut, exit};
         for (Button button : buttons) {
             setButtonSetting(button);
         }
     }
 }
-
-
 

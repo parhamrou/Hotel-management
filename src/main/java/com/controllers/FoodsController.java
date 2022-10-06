@@ -1,5 +1,6 @@
 package com.controllers;
 
+import com.company.Food;
 import com.database.DBConnection;
 import com.database.SQLQueries;
 import javafx.event.ActionEvent;
@@ -78,7 +79,7 @@ public class FoodsController implements Initializable {
             alert.showAndWait();
 
             if (alert.getResult() == ButtonType.YES) {
-                DBConnection.execute(SQLQueries.delete("food", "food_id = " + foodId.getText()));
+                Food.remove(food_id);
                 foodsVbox.getChildren().remove(cell);
             }
         });
