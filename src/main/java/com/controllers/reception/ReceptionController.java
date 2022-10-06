@@ -32,7 +32,7 @@ public class ReceptionController implements Initializable {
 
     @FXML
     void checkOutButtonPressed(ActionEvent event) {
-        App.newStage(CheckOutController.class.getResource("CheckOut.fxml"), "Check-out", 800, 500);
+        App.newStage(CheckOutController.class.getResource("CheckOut.fxml"), "Check-out", 600, 250);
     }
 
     @FXML

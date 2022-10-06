@@ -83,26 +83,28 @@ public class CheckOutController implements Initializable {
             alertText.setText("You didn't enter any number!");
             return;
         }
-        ResultSet result = DBConnection.executeQuery(SQLQueries.select("room_number, costumer_id, check_in_date, check_out_date", "room", String.format("room_number = %d AND check_in_date IS NOT NULL", Integer.parseInt(searchTextField.getText()))));
         try {
-            if (!result.next()) {
-                alertText.setText("Invalid input!");
-                return;
+            ResultSet result = DBConnection.executeQuery(SQLQueries.select("room_number, costumer_id, check_in_date, check_out_date", "room", String.format("room_number = %d AND check_in_date IS NOT NULL", Integer.parseInt(searchTextField.getText()))));
+            if (result.next()) {
+                setLabelsVisible(true);
+                int roomNumber = result.getInt("room_number");
+                int costumerId = result.getInt("costumer_id");
+                String checkInDate = result.getDate("check_in_date").toString();
+                String checkOutDate = result.getDate("check_out_date").toString();
+                int totalCost = Room.getTotalCost(roomNumber);
+                ResultSet info = DBConnection.executeQuery(SQLQueries.select("first_name, last_name", "costumer", "id = " + costumerId));
+                if (info.next()) {
+                    String firstName = info.getString("first_name");
+                    String lastName = info.getString("last_name");
+                    firstNameText.setText(firstName);
+                    lastNameText.setText(lastName);
+                    checkInText.setText(checkInDate);
+                    checkOutText.setText(checkOutDate);
+                    totalPriceText.setText(Integer.toString(totalCost));
+                    return;
+                }
             }
-            setLabelsVisible(true);
-            int roomNumber = result.getInt("room_number");
-            int costumerId = result.getInt("costumer_id");
-            int totalCost = Room.getTotalCost(roomNumber);
-            String checkInDate = result.getTime("check_in_date").toString();
-            String checkOutDate = result.getTime("check_out_date").toString();
-            ResultSet info = DBConnection.executeQuery(SQLQueries.select("first_name, last_name", "costumer", "costumer_id = " + costumerId));
-            String firstName = info.getString("first_name");
-            String lastName = info.getString("last_name");
-            firstNameText.setText(firstName);
-            lastNameText.setText(lastName);
-            checkInText.setText(checkInDate);
-            checkOutText.setText(checkOutDate);
-            totalPriceText.setText(Integer.toString(totalCost));
+            alertText.setText("Invalid input!");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -134,6 +136,6 @@ public class CheckOutController implements Initializable {
         setButtonStyle(checkOutButton);
         searchButton.setOnMouseEntered(e -> searchButton.setStyle("-fx-background-color: #996633"));
         searchButton.setOnMouseExited(e -> searchButton.setStyle("-fx-background-color: #ac7339"));
-        searchButton.setStyle("-fx-prompt-text-fill: Black");
+        searchButton.setStyle("-fx-prompt-text-fill: Black; -fx-background-color: #ac7339");
     }
 }

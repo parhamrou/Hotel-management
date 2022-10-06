@@ -26,12 +26,23 @@ public class Room {
 
     public static int getTotalCost(int roomNumber) {
         int total = 0;
+        int daysDiff = 0;
+        int dayCost = 0;
         try {
             ResultSet foodsCost = DBConnection.executeQuery(SQLQueries.select("SUM(total_price)", "order_factor", "room_number = " + roomNumber));
-            total += foodsCost.getInt(1);
-            ResultSet days = DBConnection.executeQuery(SQLQueries.select("DATEDIFF(DAY, room.check_in_date, room.check_out.date)", "room", "room_number = " + roomNumber));
+            if (foodsCost.next()) {
+                total += foodsCost.getInt(1);
+            }
+            ResultSet days = DBConnection.executeQuery(SQLQueries.select("DATEDIFF(check_out_date, check_in_date)", "room", "room_number = " + roomNumber));
+            if (days.next()) {
+                daysDiff = days.getInt(1);
+            }
             ResultSet pricePerDay = DBConnection.executeQuery(SQLQueries.select("price_per_day", "room", "room_number = " + roomNumber));
-            total += pricePerDay.getInt(1) * days.getInt(1);
+            if (pricePerDay.next()) {
+                dayCost = pricePerDay.getInt(1);
+            }
+            total += daysDiff * dayCost;
+            System.out.println("Total cost = " + total);
             return total;
         } catch (SQLException e) {
             throw new RuntimeException(e);

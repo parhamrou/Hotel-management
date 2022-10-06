@@ -7,7 +7,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="250.0" prefWidth="600.0" style="-fx-background-color: #c68c53#c68c53;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.reception.CheckOutController">
    <children>
       <TextField fx:id="searchTextField" layoutX="14.0" layoutY="47.0" prefHeight="24.0" prefWidth="126.0" promptText="search" style="-fx-background-color: #d2a679;" />
@@ -57,6 +56,6 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Text fx:id="seccessAlertText" layoutX="400.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="seccessAlertText" layoutX="286.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
    </children>
 </AnchorPane>
