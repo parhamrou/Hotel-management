@@ -44,7 +44,15 @@ public class ReceptionController implements Initializable {
 
     @FXML
     void checkOutButtonPressed(ActionEvent event) {
-
+        try {
+            Parent root = FXMLLoader.load(CheckOutController.class.getResource("CheckOut.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Check-out");
+            stage.setScene(new Scene(root, 800, 500));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

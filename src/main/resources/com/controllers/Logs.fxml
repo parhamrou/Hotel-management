@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #c68c53#c68c53;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.LogsController">
+   <children>
+      <AnchorPane layoutX="40.0" layoutY="40.0" prefHeight="45.0" prefWidth="721.0" style="-fx-background-color: #ac7339; -fx-background-radius: 10 10 0 0; -fx-border-radius: 10 10 0 0;">
+         <children>
+            <Label layoutX="36.0" layoutY="11.0" text="log_id" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="158.0" layoutY="11.0" text="type" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="264.0" layoutY="11.0" text="description" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="581.0" layoutY="11.0" text="time" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ScrollPane fx:id="scrollPane" layoutX="40.0" layoutY="85.0" prefHeight="372.0" prefWidth="721.0" style="-fx-background-color: #d2a679;" stylesheets="@Order.css">
+         <content>
+            <VBox fx:id="logsVbox" prefHeight="370.0" prefWidth="721.0" style="-fx-background-color: #d2a679;" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
