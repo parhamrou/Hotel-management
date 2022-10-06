@@ -31,28 +31,12 @@ public class ReceptionController implements Initializable {
 
     @FXML
     void checkInButtonPressed(ActionEvent event) {
-        try {
-            Parent root = FXMLLoader.load(CheckInController.class.getResource("CheckIn.fxml"));
-            Stage stage = new Stage();
-            stage.setTitle("Check-in");
-            stage.setScene(new Scene(root, 800, 500));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        App.newStage(CheckInController.class.getResource("CheckIn.fxml"), "Check-in");
     }
 
     @FXML
     void checkOutButtonPressed(ActionEvent event) {
-        try {
-            Parent root = FXMLLoader.load(CheckOutController.class.getResource("CheckOut.fxml"));
-            Stage stage = new Stage();
-            stage.setTitle("Check-out");
-            stage.setScene(new Scene(root, 800, 500));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        App.newStage(CheckOutController.class.getResource("CheckOut.fxml"), "Check-out");
     }
 
     @FXML

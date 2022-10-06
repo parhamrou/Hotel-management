@@ -33,7 +33,7 @@ public class MainPageController implements Initializable {
 
     @FXML
     void eventsButtonPressed(ActionEvent event) {
-
+        App.newStage(LogsController.class.getResource("Logs.fxml"), "Logs");
     }
 
     @FXML

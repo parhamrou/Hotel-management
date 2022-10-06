@@ -48,4 +48,16 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
+
+    public static void newStage(URL url, String title) {
+        try {
+            Parent newRoot = FXMLLoader.load(url);
+            Stage newStage = new Stage();
+            newStage.setTitle(title);
+            newStage.setScene(new Scene(root, 800, 500));
+            newStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
