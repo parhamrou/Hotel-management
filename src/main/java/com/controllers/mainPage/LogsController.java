@@ -24,19 +24,20 @@ public class LogsController implements Initializable {
     private ScrollPane scrollPane;
 
     private void addLogCell(int log_id, String log_type, String log_des, Time log_time) {
+        // TODO
         // Create cell
         AnchorPane cell = new AnchorPane();
         cell.setPrefWidth(712);
         cell.setPrefHeight(40);
         // Add texts
         Text id = new Text(Integer.toString(log_id));
-        setText(id, 36);
+        setText(id, 22);
         Text logType = new Text(log_type);
-        setText(logType, 158);
+        setText(logType, 113);
         Text logDes = new Text(log_des);
-        setText(logDes, 264);
+        setText(logDes, 242);
         Text logTime = new Text(log_time.toString());
-        setText(logTime, 581);
+        setText(logTime, 614);
         cell.getChildren().addAll(id, logType, logDes, logTime);
         logsVbox.getChildren().add(cell);
     }
@@ -62,7 +63,7 @@ public class LogsController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        createLogList(DBConnection.executeQuery(SQLQueries.select("*", "log ORDER BY id ASC")));
+        createLogList(DBConnection.executeQuery(SQLQueries.select("*", "log ORDER BY id DESC")));
         scrollPane.setFitToWidth(true);
     }
 }

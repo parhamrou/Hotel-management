@@ -1,5 +1,6 @@
 package com.database;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class SQLQueries {
@@ -34,10 +35,14 @@ public class SQLQueries {
 
     public static int getMaxId(String columnName, String table) {
         try {
-            return DBConnection.executeQuery(SQLQueries.select(String.format("COALESCE(MAX(%s), 0)", columnName), table)).getInt(1);
+            ResultSet result = DBConnection.executeQuery(SQLQueries.select(String.format("COALESCE(MAX(%s), 0)", columnName), table));
+            if (result.next()) {
+                return result.getInt(1);
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return -1;
     }
 
 }

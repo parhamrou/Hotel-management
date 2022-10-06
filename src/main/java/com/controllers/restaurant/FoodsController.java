@@ -144,8 +144,8 @@ public class FoodsController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         createFoodList(DBConnection.executeQuery(SQLQueries.select("*", "food")));
         foodsScrollPane.setFitToWidth(true);
-        foodNameTextField.setStyle("-fx-prompt-text-fill: Black");
-        foodPriceTextField.setStyle("-fx-prompt-text-fill: Black");
+        foodNameTextField.setStyle("-fx-prompt-text-fill: Gray");
+        foodPriceTextField.setStyle("-fx-prompt-text-fill: Gray");
         addFoodButton.setOnMouseEntered(e -> addFoodButton.setStyle("-fx-background-color: #996633; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
         addFoodButton.setOnMouseExited(e -> addFoodButton.setStyle("-fx-background-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
         alertText.setText("");
