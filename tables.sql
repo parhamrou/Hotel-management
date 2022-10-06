@@ -104,7 +104,7 @@ End$$
 CREATE TRIGGER check_in AFTER UPDATE ON room
     FOR EACH ROW BEGIN
         IF NEW.check_in_date IS NOT NULL THEN
-            INSERT INTO log(type, description) VALUES("check_out", CONCAT("Check-in for room ", NEW.room_number));
+            INSERT INTO log(type, description) VALUES("check_in", CONCAT("Check-in for room ", NEW.room_number));
         END IF;
 End$$
 

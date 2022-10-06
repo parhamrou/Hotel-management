@@ -17,7 +17,7 @@ public class Room {
     }
 
     public static void checkIn(int roomNumber, int costumerId, String checkInDate, String checkOutDate) {
-        DBConnection.execute(SQLQueries.update("room", String.format("costumer_id = %d, check_in_date = %s, check_out_date = %s", costumerId, checkInDate, checkOutDate), "room_number = " + roomNumber));
+        DBConnection.execute(SQLQueries.update("room", String.format("costumer_id = %d, check_in_date = \"%s\", check_out_date = \"%s\"", costumerId, checkInDate, checkOutDate), "room_number = " + roomNumber));
     }
 
     public static void checkOut(int roomNumber) {

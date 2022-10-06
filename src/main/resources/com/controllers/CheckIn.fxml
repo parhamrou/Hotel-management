@@ -16,7 +16,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Text fx:id="alertText" layoutX="386.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="alertText" layoutX="464.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <DatePicker fx:id="checkInDate" layoutX="256.0" layoutY="44.0" />
       <DatePicker fx:id="checkOutDate" layoutX="508.0" layoutY="44.0" />
       <VBox fx:id="costumerVbox" layoutY="100.0" prefHeight="301.0" prefWidth="800.0" style="-fx-background-color: #c68c53#c68c53;" />
