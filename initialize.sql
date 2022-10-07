@@ -11,3 +11,6 @@ INSERT INTO food(food_name, price) VALUES("Pizza", 10);
 INSERT INTO food(food_name, price) VALUES("Pasta", 7);
 INSERT INTO food(food_name, price) VALUES("Soda", 1);
 INSERT INTO food(food_name, price) VALUES("Steak", 15);
+
+# add one admin
+INSERT INTO admin VALUES("root", "123456");

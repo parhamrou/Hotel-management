@@ -41,7 +41,7 @@ public class OrdersController implements Initializable {
         setText(timeStamp, 450);
         Button delivered = new Button("Deliver");
         delivered.setLayoutX(608);
-        delivered.setLayoutY(8);
+        delivered.setLayoutY(6);
         delivered.setPrefWidth(70);
         delivered.setPrefHeight(24);
         delivered.setStyle("-fx-background-color: #86592d; -fx-background-radius: 3 3 3 3; -fx-border-radius: 3 3 3 3; -fx-text-fill: #f6f3f3");

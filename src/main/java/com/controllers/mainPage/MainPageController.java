@@ -33,9 +33,6 @@ public class MainPageController implements Initializable {
     private Button restaurant;
 
     @FXML
-    private Button setting;
-
-    @FXML
     void eventsButtonPressed(ActionEvent event) {
         App.newStage(LogsController.class.getResource("Logs.fxml"), "Logs", 800, 500);
     }
@@ -56,11 +53,6 @@ public class MainPageController implements Initializable {
         App.switchScene(event, RestaurantController.class.getResource("Restaurant.fxml"));
     }
 
-    @FXML
-    void settingButtonPressed(ActionEvent event) {
-
-    }
-
     private void setButtonSetting(Button button) {
         button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: rgb(172, 115, 57, 0.6); -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
         button.setOnMouseExited(e -> button.setStyle("-fx-background-color: rgb(191, 128, 64, 0.6); -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
@@ -69,7 +61,7 @@ public class MainPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         background.setStyle("-fx-background-image: url('https://cdn.wallpaper.com/main/styles/responsive_1680w_scale/s3/muji-hotel-shenzhen-1.jpg');");
-        Button[] buttons = {exit, reception, restaurant, events, setting};
+        Button[] buttons = {exit, reception, restaurant, events};
         for (Button button : buttons) {
             setButtonSetting(button);
         }

@@ -110,10 +110,10 @@ public class CheckOutController implements Initializable {
         }
     }
 
-    private void setLabelsVisible(boolean isVisiable) {
+    private void setLabelsVisible(boolean isVisible) {
         Label[] labels = {firstNameLabel, lastNameLabel, checkInDateLabel, checkOutDateLabel, totalPriceLabel};
         for (Label label : labels) {
-            label.setVisible(isVisiable);
+            label.setVisible(isVisible);
         }
     }
 
@@ -125,19 +125,20 @@ public class CheckOutController implements Initializable {
     }
 
     private void setButtonStyle(Button button) {
-        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #996633; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
-        button.setOnMouseExited(e -> button.setStyle("-fx-background-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
+        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #86592d; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
+        button.setOnMouseExited(e -> button.setStyle("-fx-background-color: #734d26; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setLabelsVisible(false);
         setTextsEmpty();
+        searchTextField.setStyle("-fx-text-fill: #e5e2e2; -fx-background-color: #86592d; -fx-prompt-text-fill: #e8e5e5");
         alertText.setText("");
         seccessAlertText.setText("");
         setButtonStyle(checkOutButton);
-        searchButton.setOnMouseEntered(e -> searchButton.setStyle("-fx-background-color: #996633"));
-        searchButton.setOnMouseExited(e -> searchButton.setStyle("-fx-background-color: #ac7339"));
-        searchButton.setStyle("-fx-prompt-text-fill: Black; -fx-background-color: #ac7339");
+        searchButton.setOnMouseEntered(e -> searchButton.setStyle("-fx-background-color: #86592d"));
+        searchButton.setOnMouseExited(e -> searchButton.setStyle("-fx-background-color: #734d26"));
+        searchButton.setStyle("-fx-background-color: #734d26");
     }
 }

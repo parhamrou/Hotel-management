@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #c68c53#c68c53;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.mainPage.LogsController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-image: url('https://cdn.wallpapersafari.com/22/34/uh19xZ.jpg');" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.mainPage.LogsController">
    <children>
-      <AnchorPane layoutX="40.0" layoutY="40.0" prefHeight="45.0" prefWidth="721.0" style="-fx-background-color: #ac7339; -fx-background-radius: 10 10 0 0; -fx-border-radius: 10 10 0 0;">
+      <AnchorPane layoutX="40.0" layoutY="40.0" prefHeight="45.0" prefWidth="721.0" style="-fx-background-color: #604020; -fx-background-radius: 10 10 0 0; -fx-border-radius: 10 10 0 0;">
          <children>
             <Label layoutX="22.0" layoutY="11.0" text="log_id" textFill="WHITE">
                <font>
@@ -32,9 +32,9 @@
             </Label>
          </children>
       </AnchorPane>
-      <ScrollPane fx:id="scrollPane" layoutX="40.0" layoutY="85.0" prefHeight="372.0" prefWidth="721.0" style="-fx-background-color: #d2a679;" stylesheets="@../restaurant/Order.css">
+      <ScrollPane fx:id="scrollPane" layoutX="40.0" layoutY="85.0" prefHeight="372.0" prefWidth="721.0" style="-fx-background-color: #86592d;" stylesheets="@../restaurant/Order.css">
          <content>
-            <VBox fx:id="logsVbox" prefHeight="370.0" prefWidth="721.0" style="-fx-background-color: #d2a679;" />
+            <VBox fx:id="logsVbox" prefHeight="370.0" prefWidth="721.0" style="-fx-background-color: #86592d;" />
          </content>
       </ScrollPane>
    </children>

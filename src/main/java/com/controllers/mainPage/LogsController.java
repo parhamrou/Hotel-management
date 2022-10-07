@@ -28,6 +28,7 @@ public class LogsController implements Initializable {
         AnchorPane cell = new AnchorPane();
         cell.setPrefWidth(712);
         cell.setPrefHeight(40);
+        cell.setStyle("-fx-background-color: #734d26");
         // Add texts
         Text id = new Text(Integer.toString(log_id));
         setText(id, 22);
@@ -44,6 +45,7 @@ public class LogsController implements Initializable {
     private void setText(Text text, double x) {
         text.setLayoutX(x);
         text.setLayoutY(25);
+        text.setStyle("-fx-fill: #f6f3f3");
     }
 
     private void createLogList(ResultSet logs) {

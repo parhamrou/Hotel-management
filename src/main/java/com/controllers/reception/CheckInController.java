@@ -77,10 +77,11 @@ public class CheckInController implements Initializable {
         AnchorPane cell = new AnchorPane();
         cell.setPrefWidth(800);
         cell.setPrefHeight(57);
-        cell.setStyle("-fx-background-color:  #c68c53");
+        cell.setStyle("-fx-background-color: #734d26");
         Text text = new Text(Integer.toString(number));
         text.setLayoutX(7);
         text.setLayoutY(34);
+        text.setStyle("-fx-fill: #f6f3f3; -fx-text-fill: #f6f3f3");
         // Create textFields
         TextField firstName = new TextField();
         setTextField(firstName, "First name", 33, 146);
@@ -118,9 +119,9 @@ public class CheckInController implements Initializable {
     }
 
     private void setButton(Button button) {
-        button.setStyle("-fx-background-color: #ac7339; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-text-fill: White; -fx-font-weight: bold");
-        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #996633; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5"));
-        button.setOnMouseExited(e -> button.setStyle("-fx-background-color: #ac7339; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-text-fill: White; -fx-font-weight: bold"));
+        button.setStyle("-fx-background-color: #86592d; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-text-fill: #f6f3f3; -fx-font-weight: bold");
+        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #996633; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-text-fill: #f6f3f3; -fx-font-weight: bold"));
+        button.setOnMouseExited(e -> button.setStyle("-fx-background-color: #86592d; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-text-fill: #f6f3f3; -fx-font-weight: bold"));
     }
 
     private void setTextField(TextField textField, String promptText, double x, double width) {
@@ -129,6 +130,7 @@ public class CheckInController implements Initializable {
         textField.setPrefWidth(width);
         textField.setPrefHeight(30);
         textField.setPromptText(promptText);
+        textField.setStyle("-fx-prompt-text-fill: #c7c1c1; -fx-text-fill: #f6f3f3; -fx-background-color:#86592d");
     }
 
     private void setChoiceBoxAction() {

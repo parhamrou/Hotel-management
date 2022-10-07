@@ -7,15 +7,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="250.0" prefWidth="600.0" style="-fx-background-color: #c68c53#c68c53;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.reception.CheckOutController">
+<AnchorPane prefHeight="250.0" prefWidth="600.0" style="-fx-background-image: url('https://cdn.wallpapersafari.com/22/34/uh19xZ.jpg');" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.reception.CheckOutController">
    <children>
-      <TextField fx:id="searchTextField" layoutX="14.0" layoutY="47.0" prefHeight="24.0" prefWidth="126.0" promptText="search" style="-fx-background-color: #d2a679;" />
+      <TextField fx:id="searchTextField" layoutX="14.0" layoutY="47.0" prefHeight="24.0" prefWidth="126.0" promptText="search" style="-fx-background-color: #86592d;" />
       <Text fill="WHITE" layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room number">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Text>
-      <Text fx:id="alertText" layoutX="242.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="alertText" fill="#ebebeb" layoutX="242.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Label fx:id="firstNameLabel" layoutX="14.0" layoutY="101.0" text="first name" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -41,21 +41,21 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Text fx:id="firstNameText" layoutX="14.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="lastNameText" layoutX="122.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="checkInText" layoutX="228.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="checkOutText" layoutX="359.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="totalPriceText" layoutX="496.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Button fx:id="checkOutButton" layoutX="480.0" layoutY="199.0" mnemonicParsing="false" onAction="#checkOutButtonPressed" prefHeight="37.0" prefWidth="99.0" style="-fx-background-color: #ac7339; -fx-background-radius: 10 10 10 10; -fx-border-radius: 10 10 10 10;" text="Check-out!" textAlignment="CENTER" textFill="WHITE">
+      <Text fx:id="firstNameText" fill="#f2f2f2" layoutX="14.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="lastNameText" fill="#f2f2f2" layoutX="122.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="checkInText" fill="#f2f2f2" layoutX="228.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="checkOutText" fill="#f2f2f2" layoutX="359.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="totalPriceText" fill="#f2f2f2" layoutX="496.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Button fx:id="checkOutButton" layoutX="480.0" layoutY="199.0" mnemonicParsing="false" onAction="#checkOutButtonPressed" prefHeight="37.0" prefWidth="99.0" style="-fx-background-color: #734d26; -fx-background-radius: 10 10 10 10; -fx-border-radius: 10 10 10 10;" text="Check-out!" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="searchButton" layoutX="151.0" layoutY="47.0" mnemonicParsing="false" onAction="#searchButtonPressed" prefHeight="24.0" prefWidth="73.0" style="-fx-background-color: #ac7339;" text="search" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="searchButton" layoutX="151.0" layoutY="47.0" mnemonicParsing="false" onAction="#searchButtonPressed" prefHeight="24.0" prefWidth="73.0" style="-fx-background-color: #734d26;" text="search" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Text fx:id="seccessAlertText" layoutX="286.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="seccessAlertText" fill="WHITE" layoutX="286.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
    </children>
 </AnchorPane>
