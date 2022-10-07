@@ -41,7 +41,7 @@ public class FoodsController implements Initializable {
         AnchorPane cell = new AnchorPane();
         cell.setPrefWidth(712);
         cell.setPrefHeight(40);
-        cell.setStyle("-fx-background-color: #bf8040");
+        cell.setStyle("-fx-background-color: #734d26");
         // Add cell textFields
         TextField foodName = new TextField(food_name);
         setTextField(foodName, 185,  120);
@@ -69,7 +69,7 @@ public class FoodsController implements Initializable {
             cancelButton(change, false);
             foodName.setDisable(true);
             foodPrice.setDisable(true);
-            DBConnection.execute(SQLQueries.update("food", String.format("food_name = \"%s\", food_price = %s", foodName.getText(), foodPrice.getText()), "food_id = " + foodId.getText()));
+            DBConnection.execute(SQLQueries.update("food", String.format("food_name = \"%s\", price = %s", foodName.getText(), foodPrice.getText()), "food_id = " + foodId.getText()));
         });
         remove.setOnMouseClicked(e -> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are ou sure that you want to delete this item?", ButtonType.YES, ButtonType.NO);
@@ -93,7 +93,7 @@ public class FoodsController implements Initializable {
         textField.setPrefWidth(width);
         textField.setPrefHeight(24);
         textField.setDisable(true);
-        textField.setStyle("-fx-background-color: #bf8040; -fx-text-fill: Black; -fx-opacity: 0.8");
+        textField.setStyle("-fx-background-color:  #86592d; -fx-text-fill: #f6f3f3; -fx-opacity: 0.8");
     }
 
     private void setButton(Button button, double x) {
@@ -101,9 +101,9 @@ public class FoodsController implements Initializable {
         button.setPrefHeight(24);
         button.setLayoutX(x);
         button.setLayoutY(8);
-        button.setStyle("-fx-background-color: #d2a679; -fx-background-radius: 5 5 5 5; -fx-border-radius: 5 5 5 5; -fx-text-fill: Black");
-        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #ac7339; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5"));
-        button.setOnMouseExited(e -> button.setStyle("-fx-background-color: #d2a679; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5"));
+        button.setStyle("-fx-background-color: #86592d; -fx-background-radius: 5 5 5 5; -fx-border-radius: 5 5 5 5; -fx-text-fill: #f6f3f3");
+        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #996633; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-text-fill: #f6f3f3"));
+        button.setOnMouseExited(e -> button.setStyle("-fx-background-color: #86592d; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-text-fill: #f6f3f3"));
     }
 
     private void cancelButton(Button button, boolean isCanceled) {
@@ -144,10 +144,10 @@ public class FoodsController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         createFoodList(DBConnection.executeQuery(SQLQueries.select("*", "food")));
         foodsScrollPane.setFitToWidth(true);
-        foodNameTextField.setStyle("-fx-prompt-text-fill: Gray");
-        foodPriceTextField.setStyle("-fx-prompt-text-fill: Gray");
-        addFoodButton.setOnMouseEntered(e -> addFoodButton.setStyle("-fx-background-color: #996633; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
-        addFoodButton.setOnMouseExited(e -> addFoodButton.setStyle("-fx-background-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
+        foodNameTextField.setStyle("-fx-prompt-text-fill: #d5c7c7; -fx-text-fill: White; -fx-background-color:  #86592d");
+        foodPriceTextField.setStyle("-fx-prompt-text-fill: #d5c7c7; -fx-text-fill: WHite; -fx-background-color:  #86592d");
+        addFoodButton.setOnMouseEntered(e -> addFoodButton.setStyle("-fx-background-color: #86592d; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
+        addFoodButton.setOnMouseExited(e -> addFoodButton.setStyle("-fx-background-color: #734d26; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
         alertText.setText("");
     }
 }

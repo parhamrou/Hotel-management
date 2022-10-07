@@ -111,7 +111,7 @@ public class CheckOutController implements Initializable {
     }
 
     private void setLabelsVisible(boolean isVisiable) {
-        Label[] labels = {firstNameLabel, lastNameLabel, checkInDateLabel, checkInDateLabel, totalPriceLabel};
+        Label[] labels = {firstNameLabel, lastNameLabel, checkInDateLabel, checkOutDateLabel, totalPriceLabel};
         for (Label label : labels) {
             label.setVisible(isVisiable);
         }
@@ -133,6 +133,8 @@ public class CheckOutController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         setLabelsVisible(false);
         setTextsEmpty();
+        alertText.setText("");
+        seccessAlertText.setText("");
         setButtonStyle(checkOutButton);
         searchButton.setOnMouseEntered(e -> searchButton.setStyle("-fx-background-color: #996633"));
         searchButton.setOnMouseExited(e -> searchButton.setStyle("-fx-background-color: #ac7339"));

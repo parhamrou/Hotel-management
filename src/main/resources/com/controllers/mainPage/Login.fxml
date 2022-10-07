@@ -10,21 +10,21 @@
 
 <AnchorPane fx:id="background" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.mainPage.LoginController">
    <children>
-      <AnchorPane layoutX="288.0" layoutY="193.0" prefHeight="415.0" prefWidth="624.0" style="-fx-background-color: rgb(172, 115, 57, 0.8);">
+      <AnchorPane layoutX="332.0" layoutY="193.0" prefHeight="415.0" prefWidth="536.0" style="-fx-background-color: rgb(153, 102, 51, 0.8);">
          <children>
-            <TextField fx:id="username" layoutX="111.0" layoutY="133.0" prefHeight="35.0" prefWidth="403.0" promptText="username" />
-            <PasswordField fx:id="password" layoutX="111.0" layoutY="223.0" prefHeight="35.0" prefWidth="403.0" promptText="password" />
-            <Button layoutX="111.0" layoutY="308.0" mnemonicParsing="false" onAction="#loginButtonPressed" prefHeight="47.0" prefWidth="403.0" style="-fx-background-color: #86592d;" text="Login" textFill="#d3d3d3">
+            <TextField fx:id="username" layoutX="122.0" layoutY="134.0" prefHeight="35.0" prefWidth="293.0" promptText="username" />
+            <PasswordField fx:id="password" layoutX="122.0" layoutY="221.0" prefHeight="35.0" prefWidth="293.0" promptText="password" />
+            <Button layoutX="122.0" layoutY="306.0" mnemonicParsing="false" onAction="#loginButtonPressed" prefHeight="47.0" prefWidth="293.0" style="-fx-background-color: #86592d;" text="Login" textFill="#d3d3d3">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Button>
-            <Text fx:id="alertText" fill="#ffe6e6" layoutX="111.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-            <Label layoutX="193.0" layoutY="45.0" text="Paradise Hotel" textAlignment="CENTER">
+            <Text fx:id="alertText" fill="#ffe6e6" layoutX="122.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Label layoutX="149.0" layoutY="44.0" text="Paradise Hotel" textAlignment="CENTER">
                <font>
                   <Font name="DejaVu Serif Condensed Bold" size="32.0" />
                </font>
             </Label>
-            <Label layoutX="262.0" layoutY="93.0" text="Welcome back!" textFill="#404040">
+            <Label layoutX="218.0" layoutY="94.0" text="Welcome back!" textFill="#404040">
                <font>
                   <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                </font>

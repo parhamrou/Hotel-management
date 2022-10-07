@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #c68c53#c68c53;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.restaurant.OrdersController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-image: url('https://cdn.wallpapersafari.com/22/34/uh19xZ.jpg');" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.restaurant.OrdersController">
    <children>
       <ScrollPane fx:id="ordersScrollPane" layoutX="42.0" layoutY="87.0" prefWidth="719.0" style="-fx-background-color: #d2a679;" stylesheets="@Order.css">
          <content>
-            <VBox fx:id="ordersVbox" prefHeight="377.0" prefWidth="717.0" style="-fx-background-color: #d2a679;" />
+            <VBox fx:id="ordersVbox" prefHeight="377.0" prefWidth="717.0" style="-fx-background-color: #86592d;" />
          </content>
       </ScrollPane>
-      <AnchorPane layoutX="42.0" layoutY="33.0" prefHeight="54.0" prefWidth="719.0" style="-fx-background-color: #ac7339; -fx-background-radius: 10 10 0 0; -fx-border-radius: 10 10 0 0;">
+      <AnchorPane layoutX="42.0" layoutY="33.0" prefHeight="54.0" prefWidth="719.0" style="-fx-background-color: #604020; -fx-background-radius: 10 10 0 0; -fx-border-radius: 10 10 0 0;">
          <children>
             <Label layoutX="29.0" layoutY="17.0" text="order_id" textFill="WHITE">
                <font>

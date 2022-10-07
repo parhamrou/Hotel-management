@@ -1,5 +1,5 @@
 .scroll-pane {
-    -fx-background-color: #d2a679;
+    -fx-background-color: #AB6824FF;
 }
 
 .scroll-bar:horizontal, .scroll-bar:vertical{
@@ -20,10 +20,10 @@
 
 .scroll-bar:horizontal .thumb,
 .scroll-bar:vertical .thumb {
-    -fx-background-color:  #ac7339;
+    -fx-background-color:  #604020;
     -fx-background-radius: 5em;
 }
 
 .scroll-pane > .corner {
-    -fx-background-color:  #d2a679;
+    -fx-background-color: #ab6824;
 }

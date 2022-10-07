@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="background" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.restaurant.RestaurantController">
    <children>
-      <Button fx:id="addOrder" layoutX="214.0" layoutY="248.0" mnemonicParsing="false" onAction="#addOrderButtonPressed" prefHeight="54.0" prefWidth="772.0" style="-fx-background-color: rgb(191, 128, 64, 0.7); -fx-border-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="Add Order" textFill="WHITESMOKE">
+      <Button fx:id="addOrder" layoutX="324.0" layoutY="248.0" mnemonicParsing="false" onAction="#addOrderButtonPressed" prefHeight="54.0" prefWidth="552.0" style="-fx-background-color: rgb(191, 128, 64, 0.7); -fx-border-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="Add Order" textFill="WHITESMOKE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -20,7 +20,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="foods" layoutX="214.0" layoutY="528.0" mnemonicParsing="false" onAction="#foodsButtonPressed" prefHeight="54.0" prefWidth="772.0" style="-fx-background-color: rgb(191, 128, 64, 0.7); -fx-border-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="Foods" textFill="WHITESMOKE">
+      <Button fx:id="foods" layoutX="324.0" layoutY="528.0" mnemonicParsing="false" onAction="#foodsButtonPressed" prefHeight="54.0" prefWidth="552.0" style="-fx-background-color: rgb(191, 128, 64, 0.7); -fx-border-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="Foods" textFill="WHITESMOKE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -31,7 +31,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="exit" layoutX="214.0" layoutY="668.0" mnemonicParsing="false" onAction="#exitButtonPressed" prefHeight="54.0" prefWidth="772.0" style="-fx-background-color: rgb(191, 128, 64, 0.7); -fx-border-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="Exit" textFill="WHITESMOKE">
+      <Button fx:id="exit" layoutX="324.0" layoutY="668.0" mnemonicParsing="false" onAction="#exitButtonPressed" prefHeight="54.0" prefWidth="552.0" style="-fx-background-color: rgb(191, 128, 64, 0.7); -fx-border-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="Exit" textFill="WHITESMOKE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -47,7 +47,7 @@
             <Font name="Yrsa Medium" size="56.0" />
          </font>
       </Label>
-      <Button fx:id="orders" layoutX="214.0" layoutY="388.0" mnemonicParsing="false" onAction="#ordersButtonPressed" prefHeight="54.0" prefWidth="772.0" style="-fx-background-color: rgb(191, 128, 64, 0.7); -fx-border-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="Orders" textFill="WHITESMOKE">
+      <Button fx:id="orders" layoutX="324.0" layoutY="388.0" mnemonicParsing="false" onAction="#ordersButtonPressed" prefHeight="54.0" prefWidth="552.0" style="-fx-background-color: rgb(191, 128, 64, 0.7); -fx-border-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="Orders" textFill="WHITESMOKE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

@@ -9,14 +9,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #c68c53#c68c53;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.restaurant.FoodsController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-image: url('https://cdn.wallpapersafari.com/22/34/uh19xZ.jpg');" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.restaurant.FoodsController">
    <children>
-      <ScrollPane fx:id="foodsScrollPane" layoutX="44.0" layoutY="74.0" prefHeight="353.0" prefWidth="712.0" style="-fx-background-color: #d2a679;" stylesheets="@Order.css">
+      <ScrollPane fx:id="foodsScrollPane" layoutX="44.0" layoutY="74.0" prefHeight="353.0" prefWidth="712.0" style="-fx-background-color: #86592d;" stylesheets="@Order.css">
          <content>
-            <VBox fx:id="foodsVbox" prefHeight="353.0" prefWidth="712.0" style="-fx-background-color: #d2a679;" />
+            <VBox fx:id="foodsVbox" prefHeight="353.0" prefWidth="712.0" style="-fx-background-color: #86592d;" />
          </content>
       </ScrollPane>
-      <AnchorPane layoutX="44.0" layoutY="29.0" prefHeight="45.0" prefWidth="712.0" style="-fx-background-color: #ac7339; -fx-background-radius: 10 10 0 0; -fx-border-radius: 10 10 0 0;">
+      <AnchorPane layoutX="44.0" layoutY="29.0" prefHeight="45.0" prefWidth="712.0" style="-fx-background-color: #604020; -fx-background-radius: 10 10 0 0; -fx-border-radius: 10 10 0 0;">
          <children>
             <Label layoutX="27.0" layoutY="13.0" text="food_id" textFill="WHITE">
                <font>
@@ -44,13 +44,13 @@
                </font>
             </Label>
          </children></AnchorPane>
-      <TextField fx:id="foodNameTextField" layoutX="44.0" layoutY="449.0" prefHeight="30.0" prefWidth="193.0" promptText="food_name" style="-fx-background-color: #d2a679;" />
-      <TextField fx:id="foodPriceTextField" layoutX="304.0" layoutY="449.0" prefHeight="30.0" prefWidth="193.0" promptText="price" style="-fx-background-color: #d2a679;" />
-      <Button fx:id="addFoodButton" layoutX="560.0" layoutY="449.0" mnemonicParsing="false" onAction="#addFoodButtonPressed" prefHeight="30.0" prefWidth="128.0" style="-fx-background-color: #ac7339; -fx-background-radius: 10 10 10 10; -fx-border-radius: 10 10 10 10;" text="Add Food" textFill="WHITE">
+      <TextField fx:id="foodNameTextField" layoutX="44.0" layoutY="449.0" prefHeight="30.0" prefWidth="193.0" promptText="food_name" style="-fx-background-color: #86592d;" />
+      <TextField fx:id="foodPriceTextField" layoutX="304.0" layoutY="449.0" prefHeight="30.0" prefWidth="193.0" promptText="price" style="-fx-background-color: #86592d;" />
+      <Button fx:id="addFoodButton" layoutX="560.0" layoutY="449.0" mnemonicParsing="false" onAction="#addFoodButtonPressed" prefHeight="30.0" prefWidth="128.0" style="-fx-background-color: #734d26; -fx-background-radius: 10 10 10 10; -fx-border-radius: 10 10 10 10;" text="Add Food" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Text fx:id="alertText" layoutX="707.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="alertText" fill="#ebebeb" layoutX="707.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
    </children>
 </AnchorPane>

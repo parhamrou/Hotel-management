@@ -88,7 +88,7 @@ public class AddOrderController implements Initializable {
         AnchorPane cell = new AnchorPane();
         cell.setPrefWidth(490);
         cell.setPrefHeight(35);
-        cell.setStyle("-fx-background-color: #bf8040");
+        cell.setStyle("-fx-background-color: #734d26");
         // Add cell texts
         Text foodName = new Text(food_name);
         setText(foodName, 14, 23);
@@ -125,6 +125,7 @@ public class AddOrderController implements Initializable {
     private void setText(Text text, double x, double y) {
         text.setLayoutX(x);
         text.setLayoutY(y);
+        text.setStyle("-fx-fill: #f6f3f3");
     }
 
     private void setButton(Button button, double x, double y, double width, double height) {
@@ -132,7 +133,7 @@ public class AddOrderController implements Initializable {
         button.setLayoutY(y);
         button.setPrefWidth(width);
         button.setPrefHeight(height);
-        button.setStyle("-fx-background-color: #ac7339; -fx-background-radius: 5 5 5 5; -fx-border-radius: 5 5 5 5; -fx-border-color: Black");
+        button.setStyle("-fx-background-color: #86592d; -fx-background-radius: 3 3 3 3; -fx-border-radius: 3 3 3 3; -fx-border-color: #966332FF; -fx-text-fill: #f6f3f3");
     }
 
     private void createFoodList(ResultSet foods) {
@@ -155,8 +156,8 @@ public class AddOrderController implements Initializable {
         }
     }
     private void setButtonSetting(Button button) {
-        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #996633; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
-        button.setOnMouseExited(e -> button.setStyle("-fx-background-color: #ac7339; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
+        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #86592d; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
+        button.setOnMouseExited(e -> button.setStyle("-fx-background-color: #734d26; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10"));
     }
 
     @Override
@@ -167,7 +168,7 @@ public class AddOrderController implements Initializable {
         foodScrollPane.setFitToWidth(true);
         alertText.setText("");
         addButtonText.setText("");
-        searchTextField.setStyle("-fx-text-fill: #653434; -fx-background-color: #d2a679");
+        searchTextField.setStyle("-fx-text-fill: #e5e2e2; -fx-background-color: #86592d");
         Button[] buttons = {searchButton, addButton};
         for (Button button : buttons) {
             setButtonSetting(button);
