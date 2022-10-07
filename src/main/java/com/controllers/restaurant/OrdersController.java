@@ -37,7 +37,7 @@ public class OrdersController implements Initializable {
         Text totalPrice = new Text(Integer.toString(total_price));
         setText(totalPrice, 332);
         Text timeStamp = new Text(time);
-        setText(timeStamp, 496);
+        setText(timeStamp, 450);
         Button delivered = new Button("#");
         delivered.setLayoutX(612);
         delivered.setLayoutY(8);

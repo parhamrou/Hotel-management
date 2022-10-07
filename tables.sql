@@ -49,13 +49,14 @@ CREATE TABLE order_factor (
     is_delivered BIT DEFAULT 0,
     time TIMESTAMP default CURRENT_TIMESTAMP,
     PRIMARY KEY(order_id),
-    FOREIGN KEY(room_number) REFERENCES room(room_number) ON UPDATE CASCADE
+    FOREIGN KEY(room_number) REFERENCES room(room_number)
 );
 
 
 CREATE TABLE food_factor (
     id INT AUTO_INCREMENT,
     food_id INT,
+    food_price INT,
     order_id INT,
     PRIMARY KEY(id),
     FOREIGN KEY(order_id) REFERENCES order_factor(order_id) ON DELETE CASCADE,
@@ -78,6 +79,14 @@ FOR EACH ROW BEGIN
     IF NEW.check_in_date IS NULL THEN
         DELETE FROM costumer
         WHERE OLD.room_number = costumer.room_number;
+    END IF;
+END$$
+
+CREATE TRIGGER remove_orders AFTER UPDATE ON room
+FOR EACH ROW BEGIN
+    IF NEW.check_in_date IS NULL THEN
+        DELETE FROM order_factor
+        WHERE OLD.room_number = order_factor.room_number;
     END IF;
 END$$
 

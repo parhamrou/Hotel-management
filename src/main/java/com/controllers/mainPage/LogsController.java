@@ -24,7 +24,6 @@ public class LogsController implements Initializable {
     private ScrollPane scrollPane;
 
     private void addLogCell(int log_id, String log_type, String log_des, Time log_time) {
-        // TODO
         // Create cell
         AnchorPane cell = new AnchorPane();
         cell.setPrefWidth(712);

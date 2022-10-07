@@ -90,6 +90,6 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Text fx:id="addButtonText" fill="#653434" layoutX="649.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+      <Text fx:id="addButtonText" fill="#653434" layoutX="598.0" layoutY="464.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
    </children>
 </AnchorPane>
